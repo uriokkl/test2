@@ -1,5 +1,6 @@
 import * as i0 from '@angular/core';
 import { Injectable, Component, NgModule } from '@angular/core';
+import '@angular/compiler';
 
 class MyLibService {
     constructor() { }

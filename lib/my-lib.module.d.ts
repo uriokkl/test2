@@ -1,3 +1,4 @@
+import '@angular/compiler';
 import * as i0 from "@angular/core";
 import * as i1 from "./my-lib.component";
 export declare class MyLibModule {

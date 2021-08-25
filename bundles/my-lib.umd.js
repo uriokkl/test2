@@ -1,6 +1,6 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('my-lib', ['exports', '@angular/core'], factory) :
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/compiler')) :
+    typeof define === 'function' && define.amd ? define('my-lib', ['exports', '@angular/core', '@angular/compiler'], factory) :
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['my-lib'] = {}, global.ng.core));
 }(this, (function (exports, i0) { 'use strict';
 
