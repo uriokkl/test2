@@ -43,13 +43,6 @@
                     }]
             }], ctorParameters: function () { return []; } });
 
-    //import MapView from "@arcgis/core/views/MapView";
-    //import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
-    //import Basemap from "@arcgis/core/Basemap";
-    //import LabelClass from "@arcgis/core/layers/support/LabelClass";
-    //import { SimpleFillSymbol, SimpleLineSymbol, TextSymbol } from '@arcgis/core/symbols';
-    //import Color from '@arcgis/core/Color';
-    //import SimpleRenderer from '@arcgis/core/renderers/SimpleRenderer';
     var KklWorkUnitComponent = /** @class */ (function () {
         function KklWorkUnitComponent() {
             this.mapView = new MapView__default['default']();
@@ -59,12 +52,12 @@
         return KklWorkUnitComponent;
     }());
     KklWorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: KklWorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    KklWorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0__namespace, template: "\n    <p>\n      kkl-work-unit works12345!\n    </p>\n  ", isInline: true });
+    KklWorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0__namespace, template: "\n    <p>\n      kkl-work-unit works123456!\n    </p>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: KklWorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-KklWorkUnit',
-                        template: "\n    <p>\n      kkl-work-unit works12345!\n    </p>\n  ",
+                        template: "\n    <p>\n      kkl-work-unit works123456!\n    </p>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; } });
