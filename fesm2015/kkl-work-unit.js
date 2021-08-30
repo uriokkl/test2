@@ -1,5 +1,5 @@
 import * as i0 from '@angular/core';
-import { Injectable, Component, NgModule } from '@angular/core';
+import { Injectable, EventEmitter, Component, ViewChild, Output, Input, NgModule } from '@angular/core';
 import MapView from '@arcgis/core/views/MapView';
 
 class KklWorkUnitService {
@@ -16,29 +16,41 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
 
 class KklWorkUnitComponent {
     constructor() {
+        this.mapLoaded = new EventEmitter();
+        this._workUnits = [];
         this.mapView = new MapView();
+    }
+    set content(content) {
+        if (content) {
+            this.mapViewEl = content;
+        }
+    }
+    set workUnits(workUnits) {
     }
     ngOnInit() {
     }
 }
 KklWorkUnitComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: KklWorkUnitComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-KklWorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0, template: `
-    <p>
-      kkl-work-unit works123!
-    </p>
-  `, isInline: true });
+KklWorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `aaaa
+  <div #mapViewNode style="width:400px;height: 400px;background-color:yellow"></div>
+zzzz`, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: KklWorkUnitComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-KklWorkUnit',
-                    template: `
-    <p>
-      kkl-work-unit works123!
-    </p>
-  `,
+                    template: `aaaa
+  <div #mapViewNode style="width:400px;height: 400px;background-color:yellow"></div>
+zzzz`,
                     styles: []
                 }]
-        }], ctorParameters: function () { return []; } });
+        }], ctorParameters: function () { return []; }, propDecorators: { content: [{
+                type: ViewChild,
+                args: ['mapViewNode', { static: true }]
+            }], mapLoaded: [{
+                type: Output
+            }], workUnits: [{
+                type: Input
+            }] } });
 
 class KklWorkUnitModule {
 }

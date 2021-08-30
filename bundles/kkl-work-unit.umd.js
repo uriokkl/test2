@@ -45,22 +45,46 @@
 
     var KklWorkUnitComponent = /** @class */ (function () {
         function KklWorkUnitComponent() {
+            this.mapLoaded = new i0.EventEmitter();
+            this._workUnits = [];
             this.mapView = new MapView__default['default']();
         }
+        Object.defineProperty(KklWorkUnitComponent.prototype, "content", {
+            set: function (content) {
+                if (content) {
+                    this.mapViewEl = content;
+                }
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(KklWorkUnitComponent.prototype, "workUnits", {
+            set: function (workUnits) {
+            },
+            enumerable: false,
+            configurable: true
+        });
         KklWorkUnitComponent.prototype.ngOnInit = function () {
         };
         return KklWorkUnitComponent;
     }());
     KklWorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: KklWorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    KklWorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0__namespace, template: "\n    <p>\n      kkl-work-unit works123!\n    </p>\n  ", isInline: true });
+    KklWorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "aaaa\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: KklWorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-KklWorkUnit',
-                        template: "\n    <p>\n      kkl-work-unit works123!\n    </p>\n  ",
+                        template: "aaaa\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz",
                         styles: []
                     }]
-            }], ctorParameters: function () { return []; } });
+            }], ctorParameters: function () { return []; }, propDecorators: { content: [{
+                    type: i0.ViewChild,
+                    args: ['mapViewNode', { static: true }]
+                }], mapLoaded: [{
+                    type: i0.Output
+                }], workUnits: [{
+                    type: i0.Input
+                }] } });
 
     var KklWorkUnitModule = /** @class */ (function () {
         function KklWorkUnitModule() {
