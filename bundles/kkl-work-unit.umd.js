@@ -52,12 +52,12 @@
         return KklWorkUnitComponent;
     }());
     KklWorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: KklWorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    KklWorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0__namespace, template: "aaaa\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz", isInline: true });
+    KklWorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0__namespace, template: "\n    <p>\n      kkl-work-unit works12345!\n    </p>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: KklWorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-KklWorkUnit',
-                        template: "aaaa\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz",
+                        template: "\n    <p>\n      kkl-work-unit works12345!\n    </p>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; } });

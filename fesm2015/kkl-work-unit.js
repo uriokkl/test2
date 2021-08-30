@@ -22,16 +22,20 @@ class KklWorkUnitComponent {
     }
 }
 KklWorkUnitComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: KklWorkUnitComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-KklWorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0, template: `aaaa
-  <div #mapViewNode style="width:400px;height: 400px;background-color:yellow"></div>
-zzzz`, isInline: true });
+KklWorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0, template: `
+    <p>
+      kkl-work-unit works12345!
+    </p>
+  `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: KklWorkUnitComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-KklWorkUnit',
-                    template: `aaaa
-  <div #mapViewNode style="width:400px;height: 400px;background-color:yellow"></div>
-zzzz`,
+                    template: `
+    <p>
+      kkl-work-unit works12345!
+    </p>
+  `,
                     styles: []
                 }]
         }], ctorParameters: function () { return []; } });
