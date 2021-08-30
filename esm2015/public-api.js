@@ -1,0 +1,7 @@
+/*
+ * Public API Surface of work-unit
+ */
+export * from './lib/work-unit.service';
+export * from './lib/work-unit.component';
+export * from './lib/work-unit.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL3dvcmstdW5pdC9zcmMvcHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUVILGNBQWMseUJBQXlCLENBQUM7QUFDeEMsY0FBYywyQkFBMkIsQ0FBQztBQUMxQyxjQUFjLHdCQUF3QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiB3b3JrLXVuaXRcbiAqL1xuXG5leHBvcnQgKiBmcm9tICcuL2xpYi93b3JrLXVuaXQuc2VydmljZSc7XG5leHBvcnQgKiBmcm9tICcuL2xpYi93b3JrLXVuaXQuY29tcG9uZW50JztcbmV4cG9ydCAqIGZyb20gJy4vbGliL3dvcmstdW5pdC5tb2R1bGUnO1xuIl19
