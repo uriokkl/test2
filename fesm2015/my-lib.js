@@ -20,7 +20,7 @@ class MyLibComponent {
     }
 }
 MyLibComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.2", ngImport: i0, type: MyLibComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyLibComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.2", type: MyLibComponent, selector: "lib-my-lib", ngImport: i0, template: `
+MyLibComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.2", type: MyLibComponent, selector: "lib-my-lib123", ngImport: i0, template: `
     <p>
       my-lib works1111!
     </p>
@@ -28,7 +28,7 @@ MyLibComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.2", ngImport: i0, type: MyLibComponent, decorators: [{
             type: Component,
             args: [{
-                    selector: 'lib-my-lib',
+                    selector: 'lib-my-lib123',
                     template: `
     <p>
       my-lib works1111!
