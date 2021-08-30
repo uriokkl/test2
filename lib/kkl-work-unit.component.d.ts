@@ -6,5 +6,5 @@ export declare class KklWorkUnitComponent implements OnInit {
     constructor();
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<KklWorkUnitComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KklWorkUnitComponent, "lib-KklWorkUnit12345", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KklWorkUnitComponent, "lib-KklWorkUnit", never, {}, {}, never, never>;
 }
