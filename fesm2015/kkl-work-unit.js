@@ -21,7 +21,7 @@ class KklWorkUnitComponent {
 KklWorkUnitComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: KklWorkUnitComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
 KklWorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0, template: `
     <p>
-      kkl-work-unit works!
+      kkl-work-unit works111!
     </p>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: KklWorkUnitComponent, decorators: [{
@@ -30,7 +30,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
                     selector: 'lib-KklWorkUnit',
                     template: `
     <p>
-      kkl-work-unit works!
+      kkl-work-unit works111!
     </p>
   `,
                     styles: []

@@ -48,12 +48,12 @@
         return KklWorkUnitComponent;
     }());
     KklWorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: KklWorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    KklWorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0__namespace, template: "\n    <p>\n      kkl-work-unit works!\n    </p>\n  ", isInline: true });
+    KklWorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0__namespace, template: "\n    <p>\n      kkl-work-unit works111!\n    </p>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: KklWorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-KklWorkUnit',
-                        template: "\n    <p>\n      kkl-work-unit works!\n    </p>\n  ",
+                        template: "\n    <p>\n      kkl-work-unit works111!\n    </p>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; } });
