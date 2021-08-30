@@ -1,8 +1,10 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('kkl-work-unit', ['exports', '@angular/core'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['kkl-work-unit'] = {}, global.ng.core));
-}(this, (function (exports, i0) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@arcgis/core/views/MapView')) :
+    typeof define === 'function' && define.amd ? define('kkl-work-unit', ['exports', '@angular/core', '@arcgis/core/views/MapView'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['kkl-work-unit'] = {}, global.ng.core, global.MapView));
+}(this, (function (exports, i0, MapView) { 'use strict';
+
+    function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
     function _interopNamespace(e) {
         if (e && e.__esModule) return e;
@@ -25,6 +27,7 @@
     }
 
     var i0__namespace = /*#__PURE__*/_interopNamespace(i0);
+    var MapView__default = /*#__PURE__*/_interopDefaultLegacy(MapView);
 
     var KklWorkUnitService = /** @class */ (function () {
         function KklWorkUnitService() {
@@ -42,18 +45,19 @@
 
     var KklWorkUnitComponent = /** @class */ (function () {
         function KklWorkUnitComponent() {
+            this.mapView = new MapView__default['default']();
         }
         KklWorkUnitComponent.prototype.ngOnInit = function () {
         };
         return KklWorkUnitComponent;
     }());
     KklWorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: KklWorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    KklWorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0__namespace, template: "\n    <p>\n      kkl-work-unit works111!\n    </p>\n  ", isInline: true });
+    KklWorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: KklWorkUnitComponent, selector: "lib-KklWorkUnit", ngImport: i0__namespace, template: "\n    <p>\n      kkl-work-unit works123!\n    </p>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: KklWorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-KklWorkUnit',
-                        template: "\n    <p>\n      kkl-work-unit works111!\n    </p>\n  ",
+                        template: "\n    <p>\n      kkl-work-unit works123!\n    </p>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; } });
