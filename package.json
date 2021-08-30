@@ -1,5 +1,5 @@
 {
-  "name": "my-lib",
+  "name": "kkl-work-unit",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^12.2.0",
@@ -8,11 +8,11 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "main": "bundles/my-lib.umd.js",
-  "module": "fesm2015/my-lib.js",
-  "es2015": "fesm2015/my-lib.js",
-  "esm2015": "esm2015/my-lib.js",
-  "fesm2015": "fesm2015/my-lib.js",
-  "typings": "my-lib.d.ts",
+  "main": "bundles/kkl-work-unit.umd.js",
+  "module": "fesm2015/kkl-work-unit.js",
+  "es2015": "fesm2015/kkl-work-unit.js",
+  "esm2015": "esm2015/kkl-work-unit.js",
+  "fesm2015": "fesm2015/kkl-work-unit.js",
+  "typings": "kkl-work-unit.d.ts",
   "sideEffects": false
 }

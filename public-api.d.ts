@@ -1,3 +1,3 @@
-export * from './lib/my-lib.service';
-export * from './lib/my-lib.component';
-export * from './lib/my-lib.module';
+export * from './lib/kkl-work-unit.service';
+export * from './lib/kkl-work-unit.component';
+export * from './lib/kkl-work-unit.module';
