@@ -4,5 +4,5 @@ export declare class MyLibComponent implements OnInit {
     constructor();
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MyLibComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyLibComponent, "lib-my-lib", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MyLibComponent, "lib-my-lib123", never, {}, {}, never, never>;
 }
