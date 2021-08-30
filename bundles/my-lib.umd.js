@@ -48,11 +48,11 @@
         return MyLibComponent;
     }());
     MyLibComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.2", ngImport: i0__namespace, type: MyLibComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    MyLibComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.2", type: MyLibComponent, selector: "lib-my-lib123", ngImport: i0__namespace, template: "\n    <p>\n      my-lib works1111!\n    </p>\n  ", isInline: true });
+    MyLibComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.2", type: MyLibComponent, selector: "lib-my-lib", ngImport: i0__namespace, template: "\n    <p>\n      my-lib works1111!\n    </p>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.2", ngImport: i0__namespace, type: MyLibComponent, decorators: [{
                 type: i0.Component,
                 args: [{
-                        selector: 'lib-my-lib123',
+                        selector: 'lib-my-lib',
                         template: "\n    <p>\n      my-lib works1111!\n    </p>\n  ",
                         styles: []
                     }]
