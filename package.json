@@ -1,18 +1,19 @@
 {
-  "name": "my-lib-test1",
+  "name": "work-unit",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^12.2.0",
+    "@angular/forms": "~12.2.0",
     "@angular/core": "^12.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "main": "bundles/my-lib-test1.umd.js",
-  "module": "fesm2015/my-lib-test1.js",
-  "es2015": "fesm2015/my-lib-test1.js",
-  "esm2015": "esm2015/my-lib-test1.js",
-  "fesm2015": "fesm2015/my-lib-test1.js",
-  "typings": "my-lib-test1.d.ts",
+  "main": "bundles/work-unit.umd.js",
+  "module": "fesm2015/work-unit.js",
+  "es2015": "fesm2015/work-unit.js",
+  "esm2015": "esm2015/work-unit.js",
+  "fesm2015": "fesm2015/work-unit.js",
+  "typings": "work-unit.d.ts",
   "sideEffects": false
 }

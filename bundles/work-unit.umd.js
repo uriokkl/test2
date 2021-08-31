@@ -475,19 +475,17 @@
             });
         };
         WorkUnitComponent.prototype.ngOnInit = function () {
-            var az = this.content.nativeElement;
-            alert(az["itemprop"]);
             this.initializeMap();
         };
         return WorkUnitComponent;
     }());
     WorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { objectId: "objectId", zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n  aaaa1234567\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz\n  ", isInline: true });
+    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { objectId: "objectId", zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n  aaaa12345678\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-workUnit',
-                        template: "\n  aaaa1234567\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz\n  ",
+                        template: "\n  aaaa12345678\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; }, propDecorators: { content: [{
