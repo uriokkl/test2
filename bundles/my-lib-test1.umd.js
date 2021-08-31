@@ -42,21 +42,24 @@
 
     var MyLibTest1Component = /** @class */ (function () {
         function MyLibTest1Component() {
+            this.zz = "1";
         }
         MyLibTest1Component.prototype.ngOnInit = function () {
         };
         return MyLibTest1Component;
     }());
     MyLibTest1Component.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: MyLibTest1Component, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    MyLibTest1Component.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: MyLibTest1Component, selector: "lib-my-lib-test1", ngImport: i0__namespace, template: "\n    <p>123\n      my-lib-test1 works!\n    </p>\n  ", isInline: true });
+    MyLibTest1Component.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: MyLibTest1Component, selector: "lib-my-lib-test1", inputs: { zz: "zz" }, ngImport: i0__namespace, template: "\n    <p>12345\n      my-lib-test1 works!\n    </p>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: MyLibTest1Component, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-my-lib-test1',
-                        template: "\n    <p>123\n      my-lib-test1 works!\n    </p>\n  ",
+                        template: "\n    <p>12345\n      my-lib-test1 works!\n    </p>\n  ",
                         styles: []
                     }]
-            }], ctorParameters: function () { return []; } });
+            }], ctorParameters: function () { return []; }, propDecorators: { zz: [{
+                    type: i0.Input
+                }] } });
 
     var MyLibTest1Module = /** @class */ (function () {
         function MyLibTest1Module() {
