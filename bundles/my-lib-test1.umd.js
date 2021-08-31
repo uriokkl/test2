@@ -42,8 +42,16 @@
 
     var MyLibTest1Component = /** @class */ (function () {
         function MyLibTest1Component() {
-            this.zz = "1";
+            this._zz = "1";
         }
+        Object.defineProperty(MyLibTest1Component.prototype, "zz", {
+            set: function (v) {
+                this._zz = v;
+                alert(v);
+            },
+            enumerable: false,
+            configurable: true
+        });
         MyLibTest1Component.prototype.ngOnInit = function () {
         };
         return MyLibTest1Component;

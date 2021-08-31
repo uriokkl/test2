@@ -15,7 +15,11 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
 
 class MyLibTest1Component {
     constructor() {
-        this.zz = "1";
+        this._zz = "1";
+    }
+    set zz(v) {
+        this._zz = v;
+        alert(v);
     }
     ngOnInit() {
     }
