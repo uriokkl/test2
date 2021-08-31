@@ -120,14 +120,12 @@ class WorkUnitComponent {
         });
     }
     ngOnInit() {
-        var az = this.content.nativeElement;
-        alert(az["itemprop"]);
         this.initializeMap();
     }
 }
 WorkUnitComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
 WorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { objectId: "objectId", zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `
-  aaaa1234567
+  aaaa12345678
   <div #mapViewNode style="width:400px;height: 400px;background-color:yellow"></div>
 zzzz
   `, isInline: true });
@@ -136,7 +134,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
             args: [{
                     selector: 'lib-workUnit',
                     template: `
-  aaaa1234567
+  aaaa12345678
   <div #mapViewNode style="width:400px;height: 400px;background-color:yellow"></div>
 zzzz
   `,
