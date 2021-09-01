@@ -419,8 +419,10 @@
                     });
                     _this.featerLayer.queryExtent(query)
                         .then(function (response) {
-                        if (response.extent !== null)
+                        if (response.extent !== null) {
+                            response.extent.spatialReference = _this.mapView.spatialReference;
                             _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
+                        }
                         var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
                         EsriPwoerByelements[0].setAttribute("style", "display = 'none'");
                     });
