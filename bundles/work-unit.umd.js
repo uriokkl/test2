@@ -371,10 +371,10 @@
         function WorkUnitComponent() {
             this.mapLoaded = new i0.EventEmitter();
             this._workUnits = [];
+            this.firstTime = true;
             this._z = "z";
             this.featerLayer = new FeatureLayer__default['default']();
             this.mapView = new MapView__default['default']();
-            this.objectId = "3453";
         }
         Object.defineProperty(WorkUnitComponent.prototype, "content", {
             set: function (content) {
@@ -390,7 +390,6 @@
                 return this._z;
             },
             set: function (zzz) {
-                var azzzzzz = this.objectId;
                 this._z = zzz;
             },
             enumerable: false,
@@ -403,10 +402,16 @@
             set: function (workUnits) {
                 var _this = this;
                 this._workUnits = workUnits;
+                if (this.firstTime) {
+                    this.firstTime = false;
+                    this.initializeMap();
+                }
                 var WorkUnitsWhere = workUnits.map(function (workUnit) { return "'" + workUnit + "'"; }).
                     join();
                 this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
                 this.featerLayer.when(function () {
+                    var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
+                    var azz = EsriPwoerByelements[0];
                     var query = _this.featerLayer.createQuery();
                     query.outSpatialReference = _this.mapView.spatialReference;
                     _this.featerLayer.queryFeatures().then(function (response) {
@@ -424,9 +429,6 @@
             enumerable: false,
             configurable: true
         });
-        WorkUnitComponent.prototype.setworkUnits = function (workUnits) {
-            this.workUnits = workUnits;
-        };
         WorkUnitComponent.prototype.initializeMap = function () {
             return __awaiter(this, void 0, void 0, function () {
                 var webMap, basemap, featerRenderer, polygonsSimpleFillSymbol, labelClass;
@@ -475,17 +477,16 @@
             });
         };
         WorkUnitComponent.prototype.ngOnInit = function () {
-            this.initializeMap();
         };
         return WorkUnitComponent;
     }());
     WorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { objectId: "objectId", zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n  aaaa12345678\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz\n  ", isInline: true });
+    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-workUnit',
-                        template: "\n  aaaa12345678\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz\n  ",
+                        template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; }, propDecorators: { content: [{
@@ -493,8 +494,6 @@
                     args: ['mapViewNode', { static: true }]
                 }], mapLoaded: [{
                     type: i0.Output
-                }], objectId: [{
-                    type: i0.Input
                 }], zz: [{
                     type: i0.Input
                 }], workUnits: [{

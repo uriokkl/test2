@@ -28,10 +28,10 @@ class WorkUnitComponent {
     constructor() {
         this.mapLoaded = new EventEmitter();
         this._workUnits = [];
+        this.firstTime = true;
         this._z = "z";
         this.featerLayer = new FeatureLayer();
         this.mapView = new MapView();
-        this.objectId = "3453";
     }
     set content(content) {
         if (content) {
@@ -39,7 +39,6 @@ class WorkUnitComponent {
         }
     }
     set zz(zzz) {
-        var azzzzzz = this.objectId;
         this._z = zzz;
     }
     get zz() {
@@ -47,10 +46,16 @@ class WorkUnitComponent {
     }
     set workUnits(workUnits) {
         this._workUnits = workUnits;
+        if (this.firstTime) {
+            this.firstTime = false;
+            this.initializeMap();
+        }
         const WorkUnitsWhere = workUnits.map(workUnit => "'" + workUnit + "'").
             join();
         this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
         this.featerLayer.when(() => {
+            var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
+            var azz = EsriPwoerByelements[0];
             const query = this.featerLayer.createQuery();
             query.outSpatialReference = this.mapView.spatialReference;
             this.featerLayer.queryFeatures().then(response => {
@@ -67,9 +72,6 @@ class WorkUnitComponent {
     }
     get workUnits() {
         return this._workUnits;
-    }
-    setworkUnits(workUnits) {
-        this.workUnits = workUnits;
     }
     initializeMap() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -120,23 +122,18 @@ class WorkUnitComponent {
         });
     }
     ngOnInit() {
-        this.initializeMap();
     }
 }
 WorkUnitComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-WorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { objectId: "objectId", zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `
-  aaaa12345678
-  <div #mapViewNode style="width:400px;height: 400px;background-color:yellow"></div>
-zzzz
+WorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `
+  <div #mapViewNode style="width:100%;height: 100%;background-color:yellow"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-workUnit',
                     template: `
-  aaaa12345678
-  <div #mapViewNode style="width:400px;height: 400px;background-color:yellow"></div>
-zzzz
+  <div #mapViewNode style="width:100%;height: 100%;background-color:yellow"></div>
   `,
                     styles: []
                 }]
@@ -145,8 +142,6 @@ zzzz
                 args: ['mapViewNode', { static: true }]
             }], mapLoaded: [{
                 type: Output
-            }], objectId: [{
-                type: Input
             }], zz: [{
                 type: Input
             }], workUnits: [{

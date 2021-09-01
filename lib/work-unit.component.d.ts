@@ -7,7 +7,7 @@ export declare class WorkUnitComponent implements OnInit {
     mapLoaded: EventEmitter<boolean>;
     private mapViewEl;
     private _workUnits;
-    objectId: string;
+    private firstTime;
     private _z;
     set zz(zzz: string);
     get zz(): string;
@@ -16,9 +16,8 @@ export declare class WorkUnitComponent implements OnInit {
     featerLayer: FeatureLayer;
     mapView: MapView;
     constructor();
-    setworkUnits(workUnits: string[]): void;
     initializeMap(): Promise<void>;
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WorkUnitComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WorkUnitComponent, "lib-workUnit", never, { "objectId": "objectId"; "zz": "zz"; "workUnits": "workUnits"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WorkUnitComponent, "lib-workUnit", never, { "zz": "zz"; "workUnits": "workUnits"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
 }
