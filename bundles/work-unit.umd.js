@@ -424,7 +424,7 @@
                             _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                         }
                         var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
-                        EsriPwoerByelements[0].setAttribute("style", "display = 'none'");
+                        EsriPwoerByelements[0].setAttribute("style", "display:none");
                     });
                 });
             },
