@@ -410,8 +410,6 @@
                     join();
                 this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
                 this.featerLayer.when(function () {
-                    var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
-                    var azz = EsriPwoerByelements[0];
                     var query = _this.featerLayer.createQuery();
                     query.outSpatialReference = _this.mapView.spatialReference;
                     _this.featerLayer.queryFeatures().then(function (response) {
@@ -423,6 +421,8 @@
                         .then(function (response) {
                         if (response.extent !== null)
                             _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
+                        var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
+                        EsriPwoerByelements[0].setAttribute("style", "display = 'none'");
                     });
                 });
             },
@@ -481,12 +481,12 @@
         return WorkUnitComponent;
     }());
     WorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "123\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ", isInline: true });
+    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-workUnit',
-                        template: "123\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ",
+                        template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; }, propDecorators: { content: [{
