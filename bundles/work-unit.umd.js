@@ -533,6 +533,176 @@
                     }]
             }] });
 
+    var SeedsCollectService = /** @class */ (function () {
+        function SeedsCollectService() {
+        }
+        return SeedsCollectService;
+    }());
+    SeedsCollectService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectService, deps: [], target: i0__namespace.ɵɵFactoryTarget.Injectable });
+    SeedsCollectService.ɵprov = i0__namespace.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectService, providedIn: 'root' });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectService, decorators: [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root'
+                    }]
+            }], ctorParameters: function () { return []; } });
+
+    var SeedsCollectComponent = /** @class */ (function () {
+        function SeedsCollectComponent() {
+            this.mapLoaded = new i0.EventEmitter();
+            this._workUnits = [];
+            this.firstTime = true;
+            this._z = "z";
+            this.featerLayer = new FeatureLayer__default['default']();
+            this.mapView = new MapView__default['default']();
+        }
+        Object.defineProperty(SeedsCollectComponent.prototype, "content", {
+            set: function (content) {
+                if (content) {
+                    this.mapViewEl = content;
+                }
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(SeedsCollectComponent.prototype, "zz", {
+            get: function () {
+                return this._z;
+            },
+            set: function (zzz) {
+                this._z = zzz;
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(SeedsCollectComponent.prototype, "workUnits", {
+            get: function () {
+                return this._workUnits;
+            },
+            set: function (workUnits) {
+                var _this = this;
+                this._workUnits = workUnits;
+                if (this.firstTime) {
+                    this.firstTime = false;
+                    this.initializeMap();
+                }
+                var WorkUnitsWhere = workUnits.map(function (workUnit) { return "'" + workUnit + "'"; }).
+                    join();
+                this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
+                this.featerLayer.when(function () {
+                    var query = _this.featerLayer.createQuery();
+                    query.outSpatialReference = _this.mapView.spatialReference;
+                    _this.featerLayer.queryFeatures().then(function (response) {
+                        response.features.forEach(function (feature) {
+                            var axzz = "Dfgd";
+                        });
+                    });
+                    _this.featerLayer.queryExtent(query)
+                        .then(function (response) {
+                        if (response.extent !== null) {
+                            response.extent.spatialReference = _this.mapView.spatialReference;
+                            _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
+                        }
+                        var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
+                        EsriPwoerByelements[0].setAttribute("style", "display:none");
+                    });
+                });
+            },
+            enumerable: false,
+            configurable: true
+        });
+        SeedsCollectComponent.prototype.initializeMap = function () {
+            return __awaiter(this, void 0, void 0, function () {
+                var webMap, basemap, featerRenderer, polygonsSimpleFillSymbol, labelClass;
+                return __generator(this, function (_a) {
+                    webMap = new WebMap__default['default']({
+                        basemap: "topo",
+                        //portalItem: {
+                        //  //url:"https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/JNFILForest/FeatureServer/0/query"
+                        //  id: "streets"
+                        //}
+                    });
+                    basemap = new Basemap__default['default']({
+                        portalItem: {
+                            //url:""
+                            id: "streets" // WGS84 Streets Vector webmap
+                        }
+                    });
+                    try {
+                        this.featerLayer = new FeatureLayer__default['default']({ url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_KKLForestManagementUnits/FeatureServer/0/query" });
+                        this.featerLayer.opacity = 0.5;
+                        this.featerLayer.definitionExpression = "1=2";
+                        featerRenderer = new SimpleRenderer__default['default']();
+                        featerRenderer.label = "{FOR_NO}";
+                        polygonsSimpleFillSymbol = new symbols.SimpleFillSymbol();
+                        polygonsSimpleFillSymbol.color = Color__default['default'].fromString("gold");
+                        polygonsSimpleFillSymbol.outline.color = Color__default['default'].fromString("blue");
+                        polygonsSimpleFillSymbol.outline.width = 2;
+                        featerRenderer.symbol = polygonsSimpleFillSymbol;
+                        labelClass = new LabelClass__default['default']();
+                        labelClass.labelExpressionInfo = { expression: "$feature.FOR_NO  " };
+                        this.featerLayer.labelingInfo = [labelClass];
+                        this.featerLayer.renderer = featerRenderer;
+                        webMap.add(this.featerLayer);
+                        this.mapView.container = this.mapViewEl.nativeElement;
+                        this.mapView.map = webMap;
+                        //(await mapView.whenLayerView(featerLayer)).filter.where = "GlobalID = '" + this._filter[0] + "'";
+                        //mapView.when(() => {
+                        //  this.mapLoaded.emit(true);
+                        //});
+                    }
+                    catch (error) {
+                        alert('We have an error: ' + error);
+                    }
+                    return [2 /*return*/];
+                });
+            });
+        };
+        SeedsCollectComponent.prototype.ngOnInit = function () {
+        };
+        return SeedsCollectComponent;
+    }());
+    SeedsCollectComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
+    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewNode style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, decorators: [{
+                type: i0.Component,
+                args: [{
+                        selector: 'lib-SeedsCollect',
+                        template: "\n    <div #mapViewNode style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
+                        styles: []
+                    }]
+            }], ctorParameters: function () { return []; }, propDecorators: { content: [{
+                    type: i0.ViewChild,
+                    args: ['mapViewNode', { static: true }]
+                }], mapLoaded: [{
+                    type: i0.Output
+                }], zz: [{
+                    type: i0.Input
+                }], workUnits: [{
+                    type: i0.Input
+                }] } });
+
+    var SeedsCollectModule = /** @class */ (function () {
+        function SeedsCollectModule() {
+        }
+        return SeedsCollectModule;
+    }());
+    SeedsCollectModule.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, deps: [], target: i0__namespace.ɵɵFactoryTarget.NgModule });
+    SeedsCollectModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, declarations: [SeedsCollectComponent], exports: [SeedsCollectComponent] });
+    SeedsCollectModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, imports: [[]] });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, decorators: [{
+                type: i0.NgModule,
+                args: [{
+                        declarations: [
+                            SeedsCollectComponent
+                        ],
+                        imports: [],
+                        exports: [
+                            SeedsCollectComponent
+                        ]
+                    }]
+            }] });
+
     /*
      * Public API Surface of work-unit
      */
@@ -541,6 +711,9 @@
      * Generated bundle index. Do not edit.
      */
 
+    exports.SeedsCollectComponent = SeedsCollectComponent;
+    exports.SeedsCollectModule = SeedsCollectModule;
+    exports.SeedsCollectService = SeedsCollectService;
     exports.WorkUnitComponent = WorkUnitComponent;
     exports.WorkUnitModule = WorkUnitModule;
     exports.WorkUnitService = WorkUnitService;
