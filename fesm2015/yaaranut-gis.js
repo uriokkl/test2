@@ -201,10 +201,10 @@ class SeedsCollectComponent {
             this.mapViewEl = content;
         }
     }
-    get SeedsCollects() {
+    get SeedsCollects123() {
         return this._SeedsCollects;
     }
-    set SeedsCollects(SeedsCollects) {
+    set SeedsCollects123(SeedsCollects) {
         this._SeedsCollects = SeedsCollects;
         if (this.firstTime) {
             this.firstTime = false;
@@ -288,7 +288,7 @@ class SeedsCollectComponent {
     }
 }
 SeedsCollectComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { SeedsCollects: "SeedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `
+SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { SeedsCollects123: "SeedsCollects123" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `
     <div #mapViewNode style="width:100%;height: 100%;background-color:green"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, decorators: [{
@@ -305,7 +305,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
                 args: ['mapViewNode', { static: true }]
             }], mapLoaded: [{
                 type: Output
-            }], SeedsCollects: [{
+            }], SeedsCollects123: [{
                 type: Input
             }] } });
 

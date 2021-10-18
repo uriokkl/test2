@@ -562,7 +562,7 @@
             enumerable: false,
             configurable: true
         });
-        Object.defineProperty(SeedsCollectComponent.prototype, "SeedsCollects", {
+        Object.defineProperty(SeedsCollectComponent.prototype, "SeedsCollects123", {
             get: function () {
                 return this._SeedsCollects;
             },
@@ -654,7 +654,7 @@
         return SeedsCollectComponent;
     }());
     SeedsCollectComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { SeedsCollects: "SeedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewNode style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { SeedsCollects123: "SeedsCollects123" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewNode style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, decorators: [{
                 type: i0.Component,
                 args: [{
@@ -667,7 +667,7 @@
                     args: ['mapViewNode', { static: true }]
                 }], mapLoaded: [{
                     type: i0.Output
-                }], SeedsCollects: [{
+                }], SeedsCollects123: [{
                     type: i0.Input
                 }] } });
 
