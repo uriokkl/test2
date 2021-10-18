@@ -19,5 +19,5 @@ export declare class SeedsCollectComponent implements OnInit {
     initializeMap(): Promise<void>;
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SeedsCollectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SeedsCollectComponent, "YaaranutGis-SeedsCollect", never, { "zz": "zz"; "workUnits": "workUnits"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SeedsCollectComponent, "yaaranut-gis-SeedsCollect", never, { "zz": "zz"; "workUnits": "workUnits"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
 }
