@@ -1,5 +1,5 @@
 {
-  "name": "work-unit",
+  "name": "yaaranut-gis",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^12.2.0",
@@ -9,11 +9,11 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "main": "bundles/work-unit.umd.js",
-  "module": "fesm2015/work-unit.js",
-  "es2015": "fesm2015/work-unit.js",
-  "esm2015": "esm2015/work-unit.js",
-  "fesm2015": "fesm2015/work-unit.js",
-  "typings": "work-unit.d.ts",
+  "main": "bundles/yaaranut-gis.umd.js",
+  "module": "fesm2015/yaaranut-gis.js",
+  "es2015": "fesm2015/yaaranut-gis.js",
+  "esm2015": "esm2015/yaaranut-gis.js",
+  "fesm2015": "fesm2015/yaaranut-gis.js",
+  "typings": "yaaranut-gis.d.ts",
   "sideEffects": false
 }
