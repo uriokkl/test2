@@ -8,8 +8,8 @@ export declare class SeedsCollectComponent implements OnInit {
     private mapViewEl;
     private _SeedsCollects;
     private firstTime;
-    get SeedsCollects123(): string[];
-    set SeedsCollects123(SeedsCollects: string[]);
+    get workUnits(): string[];
+    set workUnits(SeedsCollects: string[]);
     aaazzz(): void;
     featerLayer: FeatureLayer;
     mapView: MapView;
@@ -17,5 +17,5 @@ export declare class SeedsCollectComponent implements OnInit {
     initializeMap(): Promise<void>;
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SeedsCollectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SeedsCollectComponent, "lib-SeedsCollect", never, { "SeedsCollects123": "SeedsCollects123"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SeedsCollectComponent, "lib-SeedsCollect", never, { "workUnits": "workUnits"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
 }
