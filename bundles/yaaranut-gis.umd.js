@@ -395,7 +395,7 @@
             enumerable: false,
             configurable: true
         });
-        Object.defineProperty(WorkUnitComponent.prototype, "workUnits123", {
+        Object.defineProperty(WorkUnitComponent.prototype, "workUnits", {
             get: function () {
                 return this._workUnits;
             },
@@ -483,7 +483,7 @@
         return WorkUnitComponent;
     }());
     WorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { zz: "zz", workUnits123: "workUnits123" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "bbbbb\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ", isInline: true });
+    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "bbbbb\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
@@ -498,7 +498,7 @@
                     type: i0.Output
                 }], zz: [{
                     type: i0.Input
-                }], workUnits123: [{
+                }], workUnits: [{
                     type: i0.Input
                 }] } });
 
