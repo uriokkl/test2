@@ -567,41 +567,39 @@
                 return this._SeedsCollects;
             },
             set: function (SeedsCollects) {
+                var _this = this;
                 this._SeedsCollects = SeedsCollects;
+                if (this.firstTime) {
+                    this.firstTime = false;
+                    this.initializeMap();
+                }
+                var SeedsCollectsWhere = this._SeedsCollects.map(function (SeedsCollect) { return "'" + SeedsCollect + "'"; }).
+                    join();
+                this.featerLayer.definitionExpression = "GlobalID_2 in (" + SeedsCollectsWhere + ")";
+                this.featerLayer.when(function () {
+                    var query = _this.featerLayer.createQuery();
+                    query.outSpatialReference = _this.mapView.spatialReference;
+                    _this.featerLayer.queryFeatures().then(function (response) {
+                        response.features.forEach(function (feature) {
+                            var axzz = "Dfgd";
+                        });
+                    });
+                    _this.featerLayer.queryExtent(query)
+                        .then(function (response) {
+                        if (response.extent !== null) {
+                            response.extent.spatialReference = _this.mapView.spatialReference;
+                            _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
+                        }
+                        //var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
+                        //for (let i = 0; i < EsriPwoerByelements.length; i++) {  
+                        //  EsriPwoerByelements[i].setAttribute("style", "display:none");
+                        //}
+                    });
+                });
             },
             enumerable: false,
             configurable: true
         });
-        SeedsCollectComponent.prototype.aaazzz = function () {
-            var _this = this;
-            if (this.firstTime) {
-                this.firstTime = false;
-                this.initializeMap();
-            }
-            var SeedsCollectsWhere = this._SeedsCollects.map(function (SeedsCollect) { return "'" + SeedsCollect + "'"; }).
-                join();
-            this.featerLayer.definitionExpression = "GlobalID_2 in (" + SeedsCollectsWhere + ")";
-            this.featerLayer.when(function () {
-                var query = _this.featerLayer.createQuery();
-                query.outSpatialReference = _this.mapView.spatialReference;
-                _this.featerLayer.queryFeatures().then(function (response) {
-                    response.features.forEach(function (feature) {
-                        var axzz = "Dfgd";
-                    });
-                });
-                _this.featerLayer.queryExtent(query)
-                    .then(function (response) {
-                    if (response.extent !== null) {
-                        response.extent.spatialReference = _this.mapView.spatialReference;
-                        _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
-                    }
-                    //var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
-                    //for (let i = 0; i < EsriPwoerByelements.length; i++) {  
-                    //  EsriPwoerByelements[i].setAttribute("style", "display:none");
-                    //}
-                });
-            });
-        };
         SeedsCollectComponent.prototype.initializeMap = function () {
             return __awaiter(this, void 0, void 0, function () {
                 var webMap, basemap, featerRenderer, polygonsSimpleFillSymbol, labelClass;

@@ -10,7 +10,6 @@ export declare class SeedsCollectComponent implements OnInit {
     private firstTime;
     get workUnits(): string[];
     set workUnits(SeedsCollects: string[]);
-    aaazzz(): void;
     featerLayer: FeatureLayer;
     mapView: MapView;
     constructor();

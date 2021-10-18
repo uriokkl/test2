@@ -206,8 +206,6 @@ class SeedsCollectComponent {
     }
     set workUnits(SeedsCollects) {
         this._SeedsCollects = SeedsCollects;
-    }
-    aaazzz() {
         if (this.firstTime) {
             this.firstTime = false;
             this.initializeMap();
