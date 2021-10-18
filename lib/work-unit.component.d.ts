@@ -19,5 +19,5 @@ export declare class WorkUnitComponent implements OnInit {
     initializeMap(): Promise<void>;
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WorkUnitComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WorkUnitComponent, "lib-workUnit", never, { "zz": "zz"; "workUnits": "workUnits"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WorkUnitComponent, "yaaranut-gis-workUnit", never, { "zz": "zz"; "workUnits": "workUnits"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
 }
