@@ -44,6 +44,9 @@ class WorkUnitComponent {
     get zz() {
         return this._z;
     }
+    get workUnits() {
+        return this._workUnits;
+    }
     set workUnits(workUnits) {
         this._workUnits = workUnits;
         if (this.firstTime) {
@@ -71,9 +74,6 @@ class WorkUnitComponent {
                 EsriPwoerByelements[0].setAttribute("style", "display:none");
             });
         });
-    }
-    get workUnits() {
-        return this._workUnits;
     }
     initializeMap() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -193,9 +193,8 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
 class SeedsCollectComponent {
     constructor() {
         this.mapLoaded = new EventEmitter();
-        this._workUnits = [];
+        this._SeedsCollects = [];
         this.firstTime = true;
-        this._z = "z";
         this.featerLayer = new FeatureLayer();
         this.mapView = new MapView();
     }
@@ -204,21 +203,18 @@ class SeedsCollectComponent {
             this.mapViewEl = content;
         }
     }
-    set zz(zzz) {
-        this._z = zzz;
+    get SeedsCollects() {
+        return this._SeedsCollects;
     }
-    get zz() {
-        return this._z;
-    }
-    set workUnits(workUnits) {
-        this._workUnits = workUnits;
+    set SeedsCollects(SeedsCollects) {
+        this._SeedsCollects = SeedsCollects;
         if (this.firstTime) {
             this.firstTime = false;
             this.initializeMap();
         }
-        const WorkUnitsWhere = workUnits.map(workUnit => "'" + workUnit + "'").
+        const SeedsCollectsWhere = SeedsCollects.map(SeedsCollect => "'" + SeedsCollect + "'").
             join();
-        this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
+        this.featerLayer.definitionExpression = "GlobalID_2 in (" + SeedsCollectsWhere + ")";
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
             query.outSpatialReference = this.mapView.spatialReference;
@@ -234,12 +230,11 @@ class SeedsCollectComponent {
                     this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                 }
                 var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
-                EsriPwoerByelements[0].setAttribute("style", "display:none");
+                for (let i = 0; i < EsriPwoerByelements.length; i++) {
+                    EsriPwoerByelements[i].setAttribute("style", "display:none");
+                }
             });
         });
-    }
-    get workUnits() {
-        return this._workUnits;
     }
     initializeMap() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -257,7 +252,9 @@ class SeedsCollectComponent {
                 }
             });
             try {
-                this.featerLayer = new FeatureLayer({ url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_KKLForestManagementUnits/FeatureServer/0/query" });
+                this.featerLayer = new FeatureLayer({
+                    url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_SeedCollect2021/FeatureServer/0/query"
+                });
                 this.featerLayer.opacity = 0.5;
                 this.featerLayer.definitionExpression = "1=2";
                 //this.featerLayer.displayField = "FOR_NO";
@@ -266,14 +263,14 @@ class SeedsCollectComponent {
                 //this.featerLayer.outFields = ["FOR_NO"];
                 //this.featerLayer.popupEnabled = true;
                 const featerRenderer = new SimpleRenderer();
-                featerRenderer.label = "{FOR_NO}";
+                featerRenderer.label = "{Site}";
                 const polygonsSimpleFillSymbol = new SimpleFillSymbol();
                 polygonsSimpleFillSymbol.color = Color.fromString("gold");
                 polygonsSimpleFillSymbol.outline.color = Color.fromString("blue");
                 polygonsSimpleFillSymbol.outline.width = 2;
                 featerRenderer.symbol = polygonsSimpleFillSymbol;
                 const labelClass = new LabelClass();
-                labelClass.labelExpressionInfo = { expression: "$feature.FOR_NO  " };
+                labelClass.labelExpressionInfo = { expression: "$feature.Site  " };
                 this.featerLayer.labelingInfo = [labelClass];
                 this.featerLayer.renderer = featerRenderer;
                 webMap.add(this.featerLayer);
@@ -293,7 +290,7 @@ class SeedsCollectComponent {
     }
 }
 SeedsCollectComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `
+SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { SeedsCollects: "SeedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `
     <div #mapViewNode style="width:100%;height: 100%;background-color:green"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, decorators: [{
@@ -310,9 +307,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
                 args: ['mapViewNode', { static: true }]
             }], mapLoaded: [{
                 type: Output
-            }], zz: [{
-                type: Input
-            }], workUnits: [{
+            }], SeedsCollects: [{
                 type: Input
             }] } });
 

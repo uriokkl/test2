@@ -550,9 +550,8 @@
     var SeedsCollectComponent = /** @class */ (function () {
         function SeedsCollectComponent() {
             this.mapLoaded = new i0.EventEmitter();
-            this._workUnits = [];
+            this._SeedsCollects = [];
             this.firstTime = true;
-            this._z = "z";
             this.featerLayer = new FeatureLayer__default['default']();
             this.mapView = new MapView__default['default']();
         }
@@ -565,30 +564,20 @@
             enumerable: false,
             configurable: true
         });
-        Object.defineProperty(SeedsCollectComponent.prototype, "zz", {
+        Object.defineProperty(SeedsCollectComponent.prototype, "SeedsCollects", {
             get: function () {
-                return this._z;
+                return this._SeedsCollects;
             },
-            set: function (zzz) {
-                this._z = zzz;
-            },
-            enumerable: false,
-            configurable: true
-        });
-        Object.defineProperty(SeedsCollectComponent.prototype, "workUnits", {
-            get: function () {
-                return this._workUnits;
-            },
-            set: function (workUnits) {
+            set: function (SeedsCollects) {
                 var _this = this;
-                this._workUnits = workUnits;
+                this._SeedsCollects = SeedsCollects;
                 if (this.firstTime) {
                     this.firstTime = false;
                     this.initializeMap();
                 }
-                var WorkUnitsWhere = workUnits.map(function (workUnit) { return "'" + workUnit + "'"; }).
+                var SeedsCollectsWhere = SeedsCollects.map(function (SeedsCollect) { return "'" + SeedsCollect + "'"; }).
                     join();
-                this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
+                this.featerLayer.definitionExpression = "GlobalID_2 in (" + SeedsCollectsWhere + ")";
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();
                     query.outSpatialReference = _this.mapView.spatialReference;
@@ -604,7 +593,9 @@
                             _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                         }
                         var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
-                        EsriPwoerByelements[0].setAttribute("style", "display:none");
+                        for (var i = 0; i < EsriPwoerByelements.length; i++) {
+                            EsriPwoerByelements[i].setAttribute("style", "display:none");
+                        }
                     });
                 });
             },
@@ -629,18 +620,20 @@
                         }
                     });
                     try {
-                        this.featerLayer = new FeatureLayer__default['default']({ url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_KKLForestManagementUnits/FeatureServer/0/query" });
+                        this.featerLayer = new FeatureLayer__default['default']({
+                            url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_SeedCollect2021/FeatureServer/0/query"
+                        });
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
                         featerRenderer = new SimpleRenderer__default['default']();
-                        featerRenderer.label = "{FOR_NO}";
+                        featerRenderer.label = "{Site}";
                         polygonsSimpleFillSymbol = new symbols.SimpleFillSymbol();
                         polygonsSimpleFillSymbol.color = Color__default['default'].fromString("gold");
                         polygonsSimpleFillSymbol.outline.color = Color__default['default'].fromString("blue");
                         polygonsSimpleFillSymbol.outline.width = 2;
                         featerRenderer.symbol = polygonsSimpleFillSymbol;
                         labelClass = new LabelClass__default['default']();
-                        labelClass.labelExpressionInfo = { expression: "$feature.FOR_NO  " };
+                        labelClass.labelExpressionInfo = { expression: "$feature.Site  " };
                         this.featerLayer.labelingInfo = [labelClass];
                         this.featerLayer.renderer = featerRenderer;
                         webMap.add(this.featerLayer);
@@ -663,7 +656,7 @@
         return SeedsCollectComponent;
     }());
     SeedsCollectComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewNode style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { SeedsCollects: "SeedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewNode style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, decorators: [{
                 type: i0.Component,
                 args: [{
@@ -676,9 +669,7 @@
                     args: ['mapViewNode', { static: true }]
                 }], mapLoaded: [{
                     type: i0.Output
-                }], zz: [{
-                    type: i0.Input
-                }], workUnits: [{
+                }], SeedsCollects: [{
                     type: i0.Input
                 }] } });
 

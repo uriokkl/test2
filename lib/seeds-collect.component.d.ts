@@ -6,18 +6,15 @@ export declare class SeedsCollectComponent implements OnInit {
     set content(content: ElementRef);
     mapLoaded: EventEmitter<boolean>;
     private mapViewEl;
-    private _workUnits;
+    private _SeedsCollects;
     private firstTime;
-    private _z;
-    set zz(zzz: string);
-    get zz(): string;
-    set workUnits(workUnits: string[]);
-    get workUnits(): string[];
+    get SeedsCollects(): string[];
+    set SeedsCollects(SeedsCollects: string[]);
     featerLayer: FeatureLayer;
     mapView: MapView;
     constructor();
     initializeMap(): Promise<void>;
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SeedsCollectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SeedsCollectComponent, "lib-SeedsCollect", never, { "zz": "zz"; "workUnits": "workUnits"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SeedsCollectComponent, "lib-SeedsCollect", never, { "SeedsCollects": "SeedsCollects"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
 }
