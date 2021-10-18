@@ -44,9 +44,6 @@ class WorkUnitComponent {
     get zz() {
         return this._z;
     }
-    get workUnits() {
-        return this._workUnits;
-    }
     set workUnits(workUnits) {
         this._workUnits = workUnits;
         if (this.firstTime) {
@@ -74,6 +71,9 @@ class WorkUnitComponent {
                 EsriPwoerByelements[0].setAttribute("style", "display:none");
             });
         });
+    }
+    get workUnits() {
+        return this._workUnits;
     }
     initializeMap() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -127,14 +127,14 @@ class WorkUnitComponent {
     }
 }
 WorkUnitComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-WorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `bbbbb
+WorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `
   <div #mapViewNode style="width:100%;height: 100%;background-color:yellow"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-workUnit',
-                    template: `bbbbb
+                    template: `
   <div #mapViewNode style="width:100%;height: 100%;background-color:yellow"></div>
   `,
                     styles: []
@@ -212,7 +212,7 @@ class SeedsCollectComponent {
         }
         const SeedsCollectsWhere = this._SeedsCollects.map(SeedsCollect => "'" + SeedsCollect + "'").
             join();
-        this.featerLayer.definitionExpression = "GlobalID_2 in (" + SeedsCollectsWhere + ")";
+        this.featerLayer.definitionExpression = "1=1";
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
             query.outSpatialReference = this.mapView.spatialReference;
@@ -254,7 +254,7 @@ class SeedsCollectComponent {
                     url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_SeedCollect2021/FeatureServer/0/querytoken=ZS9puh7vpFcFUS3oiqtvGtFwIMJ6B3fAdYhkmBi97xcR_Xa37gT_2RWah55qJbifSFcK4VqnMZAxM2YYqTEIsz83P_c7jS--gGAB6qLnwqHldfKqdMowLcYosl1VAhQFW8v59sXMOERLLA_lG_G9V0rDqLQfMYkyUq9f4Zr0RxwzB8CFST8KYwAsu7LPgIQGscRVq9cRkyTNVAYmVeUVV-oixpIqAOBsozpJbY5lhnk."
                 });
                 this.featerLayer.opacity = 0.5;
-                this.featerLayer.definitionExpression = "1=2";
+                this.featerLayer.definitionExpression = "1=1";
                 //this.featerLayer.displayField = "FOR_NO";
                 //this.featerLayer.labelsVisible = true;
                 //this.featerLayer.legendEnabled = true;

@@ -11,8 +11,8 @@ export declare class WorkUnitComponent implements OnInit {
     private _z;
     set zz(zzz: string);
     get zz(): string;
-    get workUnits(): string[];
     set workUnits(workUnits: string[]);
+    get workUnits(): string[];
     featerLayer: FeatureLayer;
     mapView: MapView;
     constructor();
