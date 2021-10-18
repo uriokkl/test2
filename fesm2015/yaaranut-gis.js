@@ -70,7 +70,7 @@ class WorkUnitComponent {
                     response.extent.spatialReference = this.mapView.spatialReference;
                     this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                 }
-                var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
+                const EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
                 EsriPwoerByelements[0].setAttribute("style", "display:none");
             });
         });
