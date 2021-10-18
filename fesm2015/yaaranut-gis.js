@@ -206,11 +206,13 @@ class SeedsCollectComponent {
     }
     set SeedsCollects123(SeedsCollects) {
         this._SeedsCollects = SeedsCollects;
+    }
+    aaazzz() {
         if (this.firstTime) {
             this.firstTime = false;
             this.initializeMap();
         }
-        const SeedsCollectsWhere = SeedsCollects.map(SeedsCollect => "'" + SeedsCollect + "'").
+        const SeedsCollectsWhere = this._SeedsCollects.map(SeedsCollect => "'" + SeedsCollect + "'").
             join();
         this.featerLayer.definitionExpression = "GlobalID_2 in (" + SeedsCollectsWhere + ")";
         this.featerLayer.when(() => {
@@ -227,10 +229,10 @@ class SeedsCollectComponent {
                     response.extent.spatialReference = this.mapView.spatialReference;
                     this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                 }
-                var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
-                for (let i = 0; i < EsriPwoerByelements.length; i++) {
-                    EsriPwoerByelements[i].setAttribute("style", "display:none");
-                }
+                //var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
+                //for (let i = 0; i < EsriPwoerByelements.length; i++) {  
+                //  EsriPwoerByelements[i].setAttribute("style", "display:none");
+                //}
             });
         });
     }
