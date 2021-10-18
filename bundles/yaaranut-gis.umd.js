@@ -505,8 +505,6 @@
     var WorkUnitModule = /** @class */ (function () {
         function WorkUnitModule() {
         }
-        WorkUnitModule.prototype.set123 = function () {
-        };
         return WorkUnitModule;
     }());
     WorkUnitModule.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, deps: [], target: i0__namespace.ɵɵFactoryTarget.NgModule });
@@ -679,15 +677,22 @@
         return SeedsCollectModule;
     }());
     SeedsCollectModule.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, deps: [], target: i0__namespace.ɵɵFactoryTarget.NgModule });
-    SeedsCollectModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, declarations: [SeedsCollectComponent], exports: [SeedsCollectComponent] });
-    SeedsCollectModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, imports: [[]] });
+    SeedsCollectModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, declarations: [SeedsCollectComponent], imports: [forms.FormsModule,
+            platformBrowser.BrowserModule], exports: [SeedsCollectComponent] });
+    SeedsCollectModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, imports: [[
+                forms.FormsModule,
+                platformBrowser.BrowserModule
+            ]] });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, decorators: [{
                 type: i0.NgModule,
                 args: [{
                         declarations: [
                             SeedsCollectComponent
                         ],
-                        imports: [],
+                        imports: [
+                            forms.FormsModule,
+                            platformBrowser.BrowserModule
+                        ],
                         exports: [
                             SeedsCollectComponent
                         ],
