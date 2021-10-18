@@ -325,7 +325,8 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
                     imports: [],
                     exports: [
                         SeedsCollectComponent
-                    ]
+                    ],
+                    schemas: [CUSTOM_ELEMENTS_SCHEMA]
                 }]
         }] });
 

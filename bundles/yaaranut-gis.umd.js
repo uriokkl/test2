@@ -690,7 +690,8 @@
                         imports: [],
                         exports: [
                             SeedsCollectComponent
-                        ]
+                        ],
+                        schemas: [i0.CUSTOM_ELEMENTS_SCHEMA]
                     }]
             }] });
 
