@@ -8,8 +8,8 @@ export declare class SeedsCollectComponent implements OnInit {
     private mapViewEl;
     private _SeedsCollects;
     private firstTime;
-    get workUnits(): string[];
     set workUnits(SeedsCollects: string[]);
+    get workUnits(): string[];
     featerLayer: FeatureLayer;
     mapView: MapView;
     constructor();

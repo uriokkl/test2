@@ -201,9 +201,6 @@ class SeedsCollectComponent {
             this.mapViewEl = content;
         }
     }
-    get workUnits() {
-        return this._SeedsCollects;
-    }
     set workUnits(SeedsCollects) {
         this._SeedsCollects = SeedsCollects;
         if (this.firstTime) {
@@ -212,6 +209,7 @@ class SeedsCollectComponent {
         }
         const SeedsCollectsWhere = this._SeedsCollects.map(SeedsCollect => "'" + SeedsCollect + "'").
             join();
+        alert(SeedsCollectsWhere);
         this.featerLayer.definitionExpression = "1=1";
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
@@ -233,6 +231,9 @@ class SeedsCollectComponent {
                 //}
             });
         });
+    }
+    get workUnits() {
+        return this._SeedsCollects;
     }
     initializeMap() {
         return __awaiter(this, void 0, void 0, function* () {

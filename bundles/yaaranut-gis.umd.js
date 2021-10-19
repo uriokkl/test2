@@ -575,6 +575,7 @@
                 }
                 var SeedsCollectsWhere = this._SeedsCollects.map(function (SeedsCollect) { return "'" + SeedsCollect + "'"; }).
                     join();
+                alert(SeedsCollectsWhere);
                 this.featerLayer.definitionExpression = "1=1";
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();
