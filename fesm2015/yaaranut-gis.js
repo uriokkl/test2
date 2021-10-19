@@ -223,6 +223,7 @@ class SeedsCollectComponent {
                 .then(response => {
                 if (response.extent !== null) {
                     response.extent.spatialReference = this.mapView.spatialReference;
+                    alert(3476411111);
                     this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                 }
                 //var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
@@ -251,9 +252,8 @@ class SeedsCollectComponent {
                 }
             });
             try {
-                this.featerLayer = new FeatureLayer({
-                    url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_SeedCollect2021/FeatureServer/0/query"
-                });
+                //this.featerLayer = new FeatureLayer({ url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_SeedCollect2021/FeatureServer/0/query" });
+                this.featerLayer = new FeatureLayer({ url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_KKLForestManagementUnits/FeatureServer/0/query" });
                 this.featerLayer.opacity = 0.5;
                 this.featerLayer.definitionExpression = "1=1";
                 //this.featerLayer.displayField = "FOR_NO";
@@ -271,7 +271,7 @@ class SeedsCollectComponent {
                 const labelClass = new LabelClass();
                 labelClass.labelExpressionInfo = { expression: "$feature.Site  " };
                 this.featerLayer.labelingInfo = [labelClass];
-                this.featerLayer.renderer = featerRenderer;
+                //this.featerLayer.renderer = featerRenderer;
                 webMap.add(this.featerLayer);
                 this.mapView.container = this.mapViewEl.nativeElement;
                 this.mapView.map = webMap;
@@ -289,21 +289,21 @@ class SeedsCollectComponent {
     }
 }
 SeedsCollectComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `zzzzz
-    <div #mapViewNode style="width:100%;height: 100%;background-color:green"></div>
+SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0, template: `zzzzz
+    <div #mapViewSeedsCollect style="width:100%;height: 100%;background-color:green"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-SeedsCollect',
                     template: `zzzzz
-    <div #mapViewNode style="width:100%;height: 100%;background-color:green"></div>
+    <div #mapViewSeedsCollect style="width:100%;height: 100%;background-color:green"></div>
   `,
                     styles: []
                 }]
         }], ctorParameters: function () { return []; }, propDecorators: { content: [{
                 type: ViewChild,
-                args: ['mapViewNode', { static: true }]
+                args: ['mapViewSeedsCollect', { static: true }]
             }], mapLoaded: [{
                 type: Output
             }], workUnits: [{
