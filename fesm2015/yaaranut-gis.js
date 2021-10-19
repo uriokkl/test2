@@ -207,8 +207,8 @@ class SeedsCollectComponent {
             this.firstTime = false;
             this.initializeMap();
         }
-        let SeedsCollectsWhere = this._SeedsCollects.map(SeedsCollect => "GlobalID_2 ='" + SeedsCollect + "' or ").
-            join();
+        let SeedsCollectsWhere = "";
+        this._SeedsCollects.forEach(SeedsCollect => SeedsCollectsWhere += "GlobalID_2 ='" + SeedsCollect + "' or ");
         SeedsCollectsWhere += "1=2";
         //alert("GlobalID_2 in (" + SeedsCollectsWhere + ")")
         alert(SeedsCollectsWhere);
@@ -290,14 +290,14 @@ class SeedsCollectComponent {
     }
 }
 SeedsCollectComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0, template: `zzzzz1666
+SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0, template: `zzzzz177
     <div #mapViewSeedsCollect style="width:100%;height: 100%;background-color:green"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-SeedsCollect',
-                    template: `zzzzz1666
+                    template: `zzzzz177
     <div #mapViewSeedsCollect style="width:100%;height: 100%;background-color:green"></div>
   `,
                     styles: []
