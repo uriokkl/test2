@@ -226,7 +226,7 @@ class SeedsCollectComponent {
             this.featerLayer.queryExtent(query)
                 .then(response => {
                 if (response.extent !== null) {
-                    response.extent.spatialReference = this.mapView.spatialReference;
+                    //response.extent.spatialReference = this.mapView.spatialReference;
                     this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                 }
                 //var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
