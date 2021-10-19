@@ -209,7 +209,8 @@ class SeedsCollectComponent {
         }
         const SeedsCollectsWhere = this._SeedsCollects.map(SeedsCollect => "'" + SeedsCollect + "'").
             join();
-        this.featerLayer.definitionExpression = SeedsCollectsWhere;
+        this.featerLayer.definitionExpression = "GlobalID_2 in (" + SeedsCollectsWhere + ")";
+        ;
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
             query.outSpatialReference = this.mapView.spatialReference;

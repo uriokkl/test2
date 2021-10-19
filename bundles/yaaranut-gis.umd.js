@@ -575,7 +575,8 @@
                 }
                 var SeedsCollectsWhere = this._SeedsCollects.map(function (SeedsCollect) { return "'" + SeedsCollect + "'"; }).
                     join();
-                this.featerLayer.definitionExpression = SeedsCollectsWhere;
+                this.featerLayer.definitionExpression = "GlobalID_2 in (" + SeedsCollectsWhere + ")";
+                ;
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();
                     query.outSpatialReference = _this.mapView.spatialReference;
