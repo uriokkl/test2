@@ -625,14 +625,14 @@
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
                         featerRenderer = new SimpleRenderer__default['default']();
-                        featerRenderer.label = "{Site} 123 {HebNic}";
+                        featerRenderer.label = "{Site}";
                         polygonsSimpleFillSymbol = new symbols.SimpleFillSymbol();
                         polygonsSimpleFillSymbol.color = Color__default['default'].fromString("gold");
                         polygonsSimpleFillSymbol.outline.color = Color__default['default'].fromString("blue");
                         polygonsSimpleFillSymbol.outline.width = 2;
                         featerRenderer.symbol = polygonsSimpleFillSymbol;
                         labelClass = new LabelClass__default['default']();
-                        labelClass.labelExpressionInfo = { expression: "$feature.Site  " };
+                        labelClass.labelExpressionInfo = { expression: "$feature.Site + $feature.HebNic " };
                         this.featerLayer.labelingInfo = [labelClass];
                         //this.featerLayer.renderer = featerRenderer;
                         webMap.add(this.featerLayer);
@@ -655,12 +655,12 @@
         return SeedsCollectComponent;
     }());
     SeedsCollectComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "zzzzz1333\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "zzzzz1444\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-SeedsCollect',
-                        template: "zzzzz1333\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
+                        template: "zzzzz1444\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; }, propDecorators: { content: [{
