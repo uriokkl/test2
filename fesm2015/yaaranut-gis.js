@@ -213,7 +213,8 @@ class SeedsCollectComponent {
         //alert("GlobalID_2 in (" + SeedsCollectsWhere + ")")
         alert(SeedsCollectsWhere);
         //this.featerLayer.definitionExpression =  SeedsCollectsWhere  ;
-        this.featerLayer.definitionExpression = "GlobalID_2 ='" + this._SeedsCollects[0] + "'";
+        //this.featerLayer.definitionExpression = "GlobalID_2 ='" + this._SeedsCollects[0] + "'";
+        this.featerLayer.definitionExpression = "1=1";
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
             query.outSpatialReference = this.mapView.spatialReference;
@@ -290,14 +291,14 @@ class SeedsCollectComponent {
     }
 }
 SeedsCollectComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0, template: `zzzzz11111
+SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0, template: `zzzzz222
     <div #mapViewSeedsCollect style="width:100%;height: 100%;background-color:green"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-SeedsCollect',
-                    template: `zzzzz11111
+                    template: `zzzzz222
     <div #mapViewSeedsCollect style="width:100%;height: 100%;background-color:green"></div>
   `,
                     styles: []
