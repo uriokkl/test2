@@ -610,11 +610,11 @@
                 var webMap, basemap, featerRenderer, polygonsSimpleFillSymbol, labelClass;
                 return __generator(this, function (_a) {
                     webMap = new WebMap__default['default']({
-                    //basemap: "topo",
-                    //portalItem: {
-                    //  //url:"https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/JNFILForest/FeatureServer/0/query"
-                    //  id: "streets"
-                    //}
+                        basemap: "topo",
+                        //portalItem: {
+                        //  //url:"https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/JNFILForest/FeatureServer/0/query"
+                        //  id: "streets"
+                        //}
                     });
                     basemap = new Basemap__default['default']({
                         portalItem: {

@@ -242,11 +242,11 @@ class SeedsCollectComponent {
     initializeMap() {
         return __awaiter(this, void 0, void 0, function* () {
             const webMap = new WebMap({
-            //basemap: "topo",
-            //portalItem: {
-            //  //url:"https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/JNFILForest/FeatureServer/0/query"
-            //  id: "streets"
-            //}
+                basemap: "topo",
+                //portalItem: {
+                //  //url:"https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/JNFILForest/FeatureServer/0/query"
+                //  id: "streets"
+                //}
             });
             let basemap = new Basemap({
                 portalItem: {
