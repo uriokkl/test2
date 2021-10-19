@@ -609,11 +609,11 @@
                 var webMap, basemap, featerRenderer, polygonsSimpleFillSymbol, labelClass;
                 return __generator(this, function (_a) {
                     webMap = new WebMap__default['default']({
-                        basemap: "topo",
-                        //portalItem: {
-                        //  //url:"https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/JNFILForest/FeatureServer/0/query"
-                        //  id: "streets"
-                        //}
+                    //basemap: "topo",
+                    //portalItem: {
+                    //  //url:"https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/JNFILForest/FeatureServer/0/query"
+                    //  id: "streets"
+                    //}
                     });
                     basemap = new Basemap__default['default']({
                         portalItem: {
@@ -656,12 +656,12 @@
         return SeedsCollectComponent;
     }());
     SeedsCollectComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "zzzzz1888\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "zzzzz1999\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-SeedsCollect',
-                        template: "zzzzz1888\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
+                        template: "zzzzz1999\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; }, propDecorators: { content: [{
