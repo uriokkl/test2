@@ -217,7 +217,7 @@ class SeedsCollectComponent {
         this.featerLayer.definitionExpression = "1=1";
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
-            query.outSpatialReference = this.mapView.spatialReference;
+            //query.outSpatialReference = this.mapView.spatialReference;
             this.featerLayer.queryFeatures().then(response => {
                 response.features.forEach(feature => {
                     const axzz = "Dfgd";

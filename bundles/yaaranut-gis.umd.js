@@ -583,7 +583,7 @@
                 this.featerLayer.definitionExpression = "1=1";
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();
-                    query.outSpatialReference = _this.mapView.spatialReference;
+                    //query.outSpatialReference = this.mapView.spatialReference;
                     _this.featerLayer.queryFeatures().then(function (response) {
                         response.features.forEach(function (feature) {
                             var axzz = "Dfgd";
