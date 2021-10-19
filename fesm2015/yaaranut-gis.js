@@ -209,7 +209,7 @@ class SeedsCollectComponent {
         }
         const SeedsCollectsWhere = this._SeedsCollects.map(SeedsCollect => "'" + SeedsCollect + "'").
             join();
-        alert(SeedsCollectsWhere);
+        alert("GlobalID_2 in (" + SeedsCollectsWhere + ")");
         this.featerLayer.definitionExpression = "GlobalID_2 in (" + SeedsCollectsWhere + ")";
         ;
         //this.featerLayer.definitionExpression = "GlobalID_2 ='" + this._SeedsCollects[0] + "'";
@@ -269,7 +269,7 @@ class SeedsCollectComponent {
                 polygonsSimpleFillSymbol.outline.width = 2;
                 featerRenderer.symbol = polygonsSimpleFillSymbol;
                 const labelClass = new LabelClass();
-                labelClass.labelExpressionInfo = { expression: "$feature.Site + $feature.HebNic " };
+                labelClass.labelExpressionInfo = { expression: "$feature.Site ,  $feature.HebNic " };
                 this.featerLayer.labelingInfo = [labelClass];
                 //this.featerLayer.renderer = featerRenderer;
                 webMap.add(this.featerLayer);
@@ -289,14 +289,14 @@ class SeedsCollectComponent {
     }
 }
 SeedsCollectComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0, template: `zzzzz1444
+SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0, template: `zzzzz1555
     <div #mapViewSeedsCollect style="width:100%;height: 100%;background-color:green"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-SeedsCollect',
-                    template: `zzzzz1444
+                    template: `zzzzz1555
     <div #mapViewSeedsCollect style="width:100%;height: 100%;background-color:green"></div>
   `,
                     styles: []
