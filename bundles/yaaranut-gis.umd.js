@@ -623,7 +623,7 @@
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
                         featerRenderer = new SimpleRenderer__default['default']();
-                        featerRenderer.label = "{Site}";
+                        featerRenderer.label = "{Site} 123 {HebNic}";
                         polygonsSimpleFillSymbol = new symbols.SimpleFillSymbol();
                         polygonsSimpleFillSymbol.color = Color__default['default'].fromString("gold");
                         polygonsSimpleFillSymbol.outline.color = Color__default['default'].fromString("blue");

@@ -260,7 +260,7 @@ class SeedsCollectComponent {
                 //this.featerLayer.outFields = ["FOR_NO"];
                 //this.featerLayer.popupEnabled = true;
                 const featerRenderer = new SimpleRenderer();
-                featerRenderer.label = "{Site}";
+                featerRenderer.label = "{Site} 123 {HebNic}";
                 const polygonsSimpleFillSymbol = new SimpleFillSymbol();
                 polygonsSimpleFillSymbol.color = Color.fromString("gold");
                 polygonsSimpleFillSymbol.outline.color = Color.fromString("blue");
