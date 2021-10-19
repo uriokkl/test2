@@ -209,8 +209,7 @@ class SeedsCollectComponent {
         }
         const SeedsCollectsWhere = this._SeedsCollects.map(SeedsCollect => "'" + SeedsCollect + "'").
             join();
-        alert(SeedsCollectsWhere);
-        this.featerLayer.definitionExpression = "1=1";
+        this.featerLayer.definitionExpression = SeedsCollectsWhere;
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
             query.outSpatialReference = this.mapView.spatialReference;
@@ -223,7 +222,6 @@ class SeedsCollectComponent {
                 .then(response => {
                 if (response.extent !== null) {
                     response.extent.spatialReference = this.mapView.spatialReference;
-                    alert(3476411111);
                     this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                 }
                 //var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
@@ -254,7 +252,7 @@ class SeedsCollectComponent {
             try {
                 this.featerLayer = new FeatureLayer({ url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_SeedCollect2021/FeatureServer/0/query?token=ZS9puh7vpFcFUS3oiqtvGtFwIMJ6B3fAdYhkmBi97xcR_Xa37gT_2RWah55qJbifSFcK4VqnMZAxM2YYqTEIsz83P_c7jS--gGAB6qLnwqHldfKqdMowLcYosl1VAhQFW8v59sXMOERLLA_lG_G9V0rDqLQfMYkyUq9f4Zr0RxwzB8CFST8KYwAsu7LPgIQGscRVq9cRkyTNVAYmVeUVV-oixpIqAOBsozpJbY5lhnk." });
                 this.featerLayer.opacity = 0.5;
-                this.featerLayer.definitionExpression = "1=1";
+                this.featerLayer.definitionExpression = "1=2";
                 //this.featerLayer.displayField = "FOR_NO";
                 //this.featerLayer.labelsVisible = true;
                 //this.featerLayer.legendEnabled = true;
