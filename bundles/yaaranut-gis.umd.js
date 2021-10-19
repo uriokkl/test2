@@ -573,11 +573,12 @@
                     this.firstTime = false;
                     this.initializeMap();
                 }
-                var SeedsCollectsWhere = this._SeedsCollects.map(function (SeedsCollect) { return "'" + SeedsCollect + "'"; }).
+                var SeedsCollectsWhere = this._SeedsCollects.map(function (SeedsCollect) { return "GlobalID_2 ='" + SeedsCollect + "' or "; }).
                     join();
-                alert("GlobalID_2 in (" + SeedsCollectsWhere + ")");
-                this.featerLayer.definitionExpression = "GlobalID_2 in (" + SeedsCollectsWhere + ")";
-                ;
+                SeedsCollectsWhere += "1=2";
+                //alert("GlobalID_2 in (" + SeedsCollectsWhere + ")")
+                alert(SeedsCollectsWhere);
+                this.featerLayer.definitionExpression = SeedsCollectsWhere;
                 //this.featerLayer.definitionExpression = "GlobalID_2 ='" + this._SeedsCollects[0] + "'";
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();
@@ -655,12 +656,12 @@
         return SeedsCollectComponent;
     }());
     SeedsCollectComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "zzzzz1555\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "zzzzz1666\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-SeedsCollect',
-                        template: "zzzzz1555\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
+                        template: "zzzzz1666\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; }, propDecorators: { content: [{
