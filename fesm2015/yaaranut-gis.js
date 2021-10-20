@@ -211,8 +211,8 @@ class SeedsCollectComponent {
         this._SeedsCollects.forEach(SeedsCollect => SeedsCollectsWhere += "GlobalID_2 ='" + SeedsCollect + "' or ");
         SeedsCollectsWhere += "1=2";
         //alert("GlobalID_2 in (" + SeedsCollectsWhere + ")")
-        alert(SeedsCollectsWhere);
-        //this.featerLayer.definitionExpression =  SeedsCollectsWhere  ;
+        //alert(SeedsCollectsWhere);
+        this.featerLayer.definitionExpression = SeedsCollectsWhere;
         //this.featerLayer.definitionExpression = "GlobalID_2 ='" + this._SeedsCollects[0] + "'";
         this.featerLayer.definitionExpression = "1=1";
         this.featerLayer.when(() => {
