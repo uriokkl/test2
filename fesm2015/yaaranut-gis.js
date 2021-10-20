@@ -214,7 +214,7 @@ class SeedsCollectComponent {
         //alert(SeedsCollectsWhere);
         this.featerLayer.definitionExpression = SeedsCollectsWhere;
         //this.featerLayer.definitionExpression = "GlobalID_2 ='" + this._SeedsCollects[0] + "'";
-        this.featerLayer.definitionExpression = "1=1";
+        //this.featerLayer.definitionExpression = "1=1";
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
             query.outSpatialReference = this.mapView.spatialReference;
