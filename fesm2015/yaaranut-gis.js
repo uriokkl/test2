@@ -11,6 +11,7 @@ import Color from '@arcgis/core/Color';
 import SimpleRenderer from '@arcgis/core/renderers/SimpleRenderer';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import esriConfig from '@arcgis/core/config';
 
 class WorkUnitService {
     constructor() { }
@@ -217,7 +218,7 @@ class SeedsCollectComponent {
         this.featerLayer.definitionExpression = "1=1";
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
-            //query.outSpatialReference = this.mapView.spatialReference;
+            query.outSpatialReference = this.mapView.spatialReference;
             this.featerLayer.queryFeatures().then(response => {
                 response.features.forEach(feature => {
                     const axzz = "Dfgd";
@@ -226,7 +227,7 @@ class SeedsCollectComponent {
             this.featerLayer.queryExtent(query)
                 .then(response => {
                 if (response.extent !== null) {
-                    //response.extent.spatialReference = this.mapView.spatialReference;
+                    response.extent.spatialReference = this.mapView.spatialReference;
                     this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                 }
                 //var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
@@ -255,6 +256,7 @@ class SeedsCollectComponent {
                 }
             });
             try {
+                esriConfig.apiKey = "AAPK9a3f55c380f94d1bb10a7566c7b32f941X_pcZKXmWY7Grjs6oA9AqufsDHrvRDYaOlUG8gvyD5fhZv-OGYyIgXEO-ihuO4T";
                 this.featerLayer = new FeatureLayer({ url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_SeedCollect2021/FeatureServer/0/query?token=ZS9puh7vpFcFUS3oiqtvGtFwIMJ6B3fAdYhkmBi97xcR_Xa37gT_2RWah55qJbifSFcK4VqnMZAxM2YYqTEIsz83P_c7jS--gGAB6qLnwqHldfKqdMowLcYosl1VAhQFW8v59sXMOERLLA_lG_G9V0rDqLQfMYkyUq9f4Zr0RxwzB8CFST8KYwAsu7LPgIQGscRVq9cRkyTNVAYmVeUVV-oixpIqAOBsozpJbY5lhnk." });
                 this.featerLayer.opacity = 0.5;
                 this.featerLayer.definitionExpression = "1=2";

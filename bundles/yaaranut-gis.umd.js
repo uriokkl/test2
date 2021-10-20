@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@arcgis/core/WebMap'), require('@arcgis/core/views/MapView'), require('@arcgis/core/layers/FeatureLayer'), require('@arcgis/core/Basemap'), require('@arcgis/core/layers/support/LabelClass'), require('@arcgis/core/symbols'), require('@arcgis/core/Color'), require('@arcgis/core/renderers/SimpleRenderer'), require('@angular/platform-browser'), require('@angular/forms')) :
-    typeof define === 'function' && define.amd ? define('yaaranut-gis', ['exports', '@angular/core', '@arcgis/core/WebMap', '@arcgis/core/views/MapView', '@arcgis/core/layers/FeatureLayer', '@arcgis/core/Basemap', '@arcgis/core/layers/support/LabelClass', '@arcgis/core/symbols', '@arcgis/core/Color', '@arcgis/core/renderers/SimpleRenderer', '@angular/platform-browser', '@angular/forms'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['yaaranut-gis'] = {}, global.ng.core, global.WebMap, global.MapView, global.FeatureLayer, global.Basemap, global.LabelClass, global.symbols, global.Color, global.SimpleRenderer, global.ng.platformBrowser, global.ng.forms));
-}(this, (function (exports, i0, WebMap, MapView, FeatureLayer, Basemap, LabelClass, symbols, Color, SimpleRenderer, platformBrowser, forms) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@arcgis/core/WebMap'), require('@arcgis/core/views/MapView'), require('@arcgis/core/layers/FeatureLayer'), require('@arcgis/core/Basemap'), require('@arcgis/core/layers/support/LabelClass'), require('@arcgis/core/symbols'), require('@arcgis/core/Color'), require('@arcgis/core/renderers/SimpleRenderer'), require('@angular/platform-browser'), require('@angular/forms'), require('@arcgis/core/config')) :
+    typeof define === 'function' && define.amd ? define('yaaranut-gis', ['exports', '@angular/core', '@arcgis/core/WebMap', '@arcgis/core/views/MapView', '@arcgis/core/layers/FeatureLayer', '@arcgis/core/Basemap', '@arcgis/core/layers/support/LabelClass', '@arcgis/core/symbols', '@arcgis/core/Color', '@arcgis/core/renderers/SimpleRenderer', '@angular/platform-browser', '@angular/forms', '@arcgis/core/config'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['yaaranut-gis'] = {}, global.ng.core, global.WebMap, global.MapView, global.FeatureLayer, global.Basemap, global.LabelClass, global.symbols, global.Color, global.SimpleRenderer, global.ng.platformBrowser, global.ng.forms, global.esriConfig));
+}(this, (function (exports, i0, WebMap, MapView, FeatureLayer, Basemap, LabelClass, symbols, Color, SimpleRenderer, platformBrowser, forms, esriConfig) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -34,6 +34,7 @@
     var LabelClass__default = /*#__PURE__*/_interopDefaultLegacy(LabelClass);
     var Color__default = /*#__PURE__*/_interopDefaultLegacy(Color);
     var SimpleRenderer__default = /*#__PURE__*/_interopDefaultLegacy(SimpleRenderer);
+    var esriConfig__default = /*#__PURE__*/_interopDefaultLegacy(esriConfig);
 
     var WorkUnitService = /** @class */ (function () {
         function WorkUnitService() {
@@ -583,7 +584,7 @@
                 this.featerLayer.definitionExpression = "1=1";
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();
-                    //query.outSpatialReference = this.mapView.spatialReference;
+                    query.outSpatialReference = _this.mapView.spatialReference;
                     _this.featerLayer.queryFeatures().then(function (response) {
                         response.features.forEach(function (feature) {
                             var axzz = "Dfgd";
@@ -592,7 +593,7 @@
                     _this.featerLayer.queryExtent(query)
                         .then(function (response) {
                         if (response.extent !== null) {
-                            //response.extent.spatialReference = this.mapView.spatialReference;
+                            response.extent.spatialReference = _this.mapView.spatialReference;
                             _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                         }
                         //var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
@@ -623,6 +624,7 @@
                         }
                     });
                     try {
+                        esriConfig__default['default'].apiKey = "AAPK9a3f55c380f94d1bb10a7566c7b32f941X_pcZKXmWY7Grjs6oA9AqufsDHrvRDYaOlUG8gvyD5fhZv-OGYyIgXEO-ihuO4T";
                         this.featerLayer = new FeatureLayer__default['default']({ url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_SeedCollect2021/FeatureServer/0/query?token=ZS9puh7vpFcFUS3oiqtvGtFwIMJ6B3fAdYhkmBi97xcR_Xa37gT_2RWah55qJbifSFcK4VqnMZAxM2YYqTEIsz83P_c7jS--gGAB6qLnwqHldfKqdMowLcYosl1VAhQFW8v59sXMOERLLA_lG_G9V0rDqLQfMYkyUq9f4Zr0RxwzB8CFST8KYwAsu7LPgIQGscRVq9cRkyTNVAYmVeUVV-oixpIqAOBsozpJbY5lhnk." });
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
