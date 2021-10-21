@@ -397,7 +397,8 @@
     }
 
     var WorkUnitComponent = /** @class */ (function () {
-        function WorkUnitComponent() {
+        function WorkUnitComponent(ys) {
+            this.ys = ys;
             this.mapLoaded = new i0.EventEmitter();
             this._workUnits = [];
             this.firstTime = true;
@@ -478,7 +479,10 @@
                         }
                     });
                     try {
-                        this.featerLayer = new FeatureLayer__default['default']({ url: "http://localhost:27552/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_KKLForestManagementUnits/FeatureServer/0/query" });
+                        // this.featerLayer = new FeatureLayer({ url: "http://localhost:27552/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_KKLForestManagementUnits/FeatureServer/0/query" });
+                        this.featerLayer = new FeatureLayer__default['default']({
+                            url: this.ys.apiUrl + "/ArcGIS/rest/services/KKLForestManagementUnits/FeatureServer/0"
+                        });
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
                         featerRenderer = new SimpleRenderer__default['default']();
@@ -511,7 +515,7 @@
         };
         return WorkUnitComponent;
     }());
-    WorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
+    WorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
     WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, decorators: [{
                 type: i0.Component,
@@ -520,7 +524,7 @@
                         template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ",
                         styles: []
                     }]
-            }], ctorParameters: function () { return []; }, propDecorators: { content: [{
+            }], ctorParameters: function () { return [{ type: YaaranutService }]; }, propDecorators: { content: [{
                     type: i0.ViewChild,
                     args: ['mapViewNode', { static: true }]
                 }], mapLoaded: [{
@@ -657,7 +661,7 @@
                         //esriConfig.apiKey = "AAPK9a3f55c380f94d1bb10a7566c7b32f941X_pcZKXmWY7Grjs6oA9AqufsDHrvRDYaOlUG8gvyD5fhZv-OGYyIgXEO-ihuO4T";
                         this.featerLayer = new FeatureLayer__default['default']({
                             url: this.ys.apiUrl + "/ArcGIS/rest/services/SeedCollect2021/FeatureServer/0"
-                        }); //?token=ZS9puh7vpFcFUS3oiqtvGtFwIMJ6B3fAdYhkmBi97xcR_Xa37gT_2RWah55qJbifSFcK4VqnMZAxM2YYqTEIsz83P_c7jS--gGAB6qLnwqHldfKqdMowLcYosl1VAhQFW8v59sXMOERLLA_lG_G9V0rDqLQfMYkyUq9f4Zr0RxwzB8CFST8KYwAsu7LPgIQGscRVq9cRkyTNVAYmVeUVV-oixpIqAOBsozpJbY5lhnk." });
+                        });
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
                         featerRenderer = new SimpleRenderer__default['default']();
