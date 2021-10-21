@@ -545,8 +545,21 @@
                     }]
             }], ctorParameters: function () { return []; } });
 
+    var YaaranutService = /** @class */ (function () {
+        function YaaranutService() {
+            this.ServerUrl = "";
+        }
+        return YaaranutService;
+    }());
+    YaaranutService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, deps: [], target: i0__namespace.ɵɵFactoryTarget.Injectable });
+    YaaranutService.ɵprov = i0__namespace.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, decorators: [{
+                type: i0.Injectable
+            }], ctorParameters: function () { return []; } });
+
     var SeedsCollectComponent = /** @class */ (function () {
-        function SeedsCollectComponent() {
+        function SeedsCollectComponent(ys) {
+            this.ys = ys;
             this.mapLoaded = new i0.EventEmitter();
             this._SeedsCollects = [];
             this.firstTime = true;
@@ -579,6 +592,7 @@
                 //alert("GlobalID_2 in (" + SeedsCollectsWhere + ")")
                 //alert(SeedsCollectsWhere);
                 this.featerLayer.definitionExpression = SeedsCollectsWhere;
+                alert(this.featerLayer.definitionExpression);
                 //this.featerLayer.definitionExpression = "GlobalID_2 ='" + this._SeedsCollects[0] + "'";
                 //this.featerLayer.definitionExpression = "1=1";
                 this.featerLayer.when(function () {
@@ -625,7 +639,7 @@
                     try {
                         //esriConfig.apiKey = "AAPK9a3f55c380f94d1bb10a7566c7b32f941X_pcZKXmWY7Grjs6oA9AqufsDHrvRDYaOlUG8gvyD5fhZv-OGYyIgXEO-ihuO4T";
                         this.featerLayer = new FeatureLayer__default['default']({
-                            url: "http://localhost:27552/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_SeedCollect2021/FeatureServer/0/query"
+                            url: this.ys + "/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_SeedCollect2021/FeatureServer/0/query"
                         }); //?token=ZS9puh7vpFcFUS3oiqtvGtFwIMJ6B3fAdYhkmBi97xcR_Xa37gT_2RWah55qJbifSFcK4VqnMZAxM2YYqTEIsz83P_c7jS--gGAB6qLnwqHldfKqdMowLcYosl1VAhQFW8v59sXMOERLLA_lG_G9V0rDqLQfMYkyUq9f4Zr0RxwzB8CFST8KYwAsu7LPgIQGscRVq9cRkyTNVAYmVeUVV-oixpIqAOBsozpJbY5lhnk." });
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
@@ -659,7 +673,7 @@
         };
         return SeedsCollectComponent;
     }());
-    SeedsCollectComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
+    SeedsCollectComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
     SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "zzzzz222\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, decorators: [{
                 type: i0.Component,
@@ -668,7 +682,7 @@
                         template: "zzzzz222\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
                         styles: []
                     }]
-            }], ctorParameters: function () { return []; }, propDecorators: { content: [{
+            }], ctorParameters: function () { return [{ type: YaaranutService }]; }, propDecorators: { content: [{
                     type: i0.ViewChild,
                     args: ['mapViewSeedsCollect', { static: true }]
                 }], mapLoaded: [{
