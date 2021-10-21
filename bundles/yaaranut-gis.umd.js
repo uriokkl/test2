@@ -35,6 +35,18 @@
     var Color__default = /*#__PURE__*/_interopDefaultLegacy(Color);
     var SimpleRenderer__default = /*#__PURE__*/_interopDefaultLegacy(SimpleRenderer);
 
+    var YaaranutService = /** @class */ (function () {
+        function YaaranutService() {
+            this.ServerUrl = "";
+        }
+        return YaaranutService;
+    }());
+    YaaranutService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, deps: [], target: i0__namespace.ɵɵFactoryTarget.Injectable });
+    YaaranutService.ɵprov = i0__namespace.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, decorators: [{
+                type: i0.Injectable
+            }], ctorParameters: function () { return []; } });
+
     var WorkUnitService = /** @class */ (function () {
         function WorkUnitService() {
         }
@@ -545,18 +557,6 @@
                     }]
             }], ctorParameters: function () { return []; } });
 
-    var YaaranutService = /** @class */ (function () {
-        function YaaranutService() {
-            this.ServerUrl = "";
-        }
-        return YaaranutService;
-    }());
-    YaaranutService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, deps: [], target: i0__namespace.ɵɵFactoryTarget.Injectable });
-    YaaranutService.ɵprov = i0__namespace.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService });
-    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, decorators: [{
-                type: i0.Injectable
-            }], ctorParameters: function () { return []; } });
-
     var SeedsCollectComponent = /** @class */ (function () {
         function SeedsCollectComponent(ys) {
             this.ys = ys;
@@ -734,6 +734,7 @@
     exports.WorkUnitComponent = WorkUnitComponent;
     exports.WorkUnitModule = WorkUnitModule;
     exports.WorkUnitService = WorkUnitService;
+    exports.YaaranutService = YaaranutService;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

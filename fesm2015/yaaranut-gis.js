@@ -12,6 +12,17 @@ import SimpleRenderer from '@arcgis/core/renderers/SimpleRenderer';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
+class YaaranutService {
+    constructor() {
+        this.ServerUrl = "";
+    }
+}
+YaaranutService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: YaaranutService, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
+YaaranutService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: YaaranutService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: YaaranutService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return []; } });
+
 class WorkUnitService {
     constructor() { }
 }
@@ -188,17 +199,6 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
                 }]
         }], ctorParameters: function () { return []; } });
 
-class YaaranutService {
-    constructor() {
-        this.ServerUrl = "";
-    }
-}
-YaaranutService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: YaaranutService, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
-YaaranutService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: YaaranutService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: YaaranutService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return []; } });
-
 class SeedsCollectComponent {
     constructor(ys) {
         this.ys = ys;
@@ -362,5 +362,5 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
  * Generated bundle index. Do not edit.
  */
 
-export { SeedsCollectComponent, SeedsCollectModule, SeedsCollectService, WorkUnitComponent, WorkUnitModule, WorkUnitService };
+export { SeedsCollectComponent, SeedsCollectModule, SeedsCollectService, WorkUnitComponent, WorkUnitModule, WorkUnitService, YaaranutService };
 //# sourceMappingURL=yaaranut-gis.js.map
