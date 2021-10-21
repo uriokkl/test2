@@ -97,7 +97,10 @@ class WorkUnitComponent {
                     this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                 }
                 const EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
-                EsriPwoerByelements[0].setAttribute("style", "display:none");
+                //EsriPwoerByelements[0].setAttribute("style","display:none");           
+                for (let i = 0; i < EsriPwoerByelements.length; i++) {
+                    EsriPwoerByelements[i].setAttribute("style", "display:none");
+                }
             });
         });
     }
@@ -243,12 +246,7 @@ class SeedsCollectComponent {
         let SeedsCollectsWhere = "";
         this._SeedsCollects.forEach(SeedsCollect => SeedsCollectsWhere += "GlobalID_2 ='" + SeedsCollect + "' or ");
         SeedsCollectsWhere += "1=2";
-        //alert("GlobalID_2 in (" + SeedsCollectsWhere + ")")
-        //alert(SeedsCollectsWhere);
         this.featerLayer.definitionExpression = SeedsCollectsWhere;
-        alert(this.featerLayer.definitionExpression);
-        //this.featerLayer.definitionExpression = "GlobalID_2 ='" + this._SeedsCollects[0] + "'";
-        //this.featerLayer.definitionExpression = "1=1";
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
             query.outSpatialReference = this.mapView.spatialReference;
@@ -263,10 +261,10 @@ class SeedsCollectComponent {
                     response.extent.spatialReference = this.mapView.spatialReference;
                     this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                 }
-                //var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
-                //for (let i = 0; i < EsriPwoerByelements.length; i++) {  
-                //  EsriPwoerByelements[i].setAttribute("style", "display:none");
-                //}
+                var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
+                for (let i = 0; i < EsriPwoerByelements.length; i++) {
+                    EsriPwoerByelements[i].setAttribute("style", "display:none");
+                }
             });
         });
     }
@@ -328,14 +326,14 @@ class SeedsCollectComponent {
     }
 }
 SeedsCollectComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, deps: [{ token: YaaranutService }], target: i0.ɵɵFactoryTarget.Component });
-SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0, template: `zzzzz222
+SeedsCollectComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0, template: `
     <div #mapViewSeedsCollect style="width:100%;height: 100%;background-color:green"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: SeedsCollectComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-SeedsCollect',
-                    template: `zzzzz222
+                    template: `
     <div #mapViewSeedsCollect style="width:100%;height: 100%;background-color:green"></div>
   `,
                     styles: []

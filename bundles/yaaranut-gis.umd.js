@@ -454,7 +454,10 @@
                             _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                         }
                         var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
-                        EsriPwoerByelements[0].setAttribute("style", "display:none");
+                        //EsriPwoerByelements[0].setAttribute("style","display:none");           
+                        for (var i = 0; i < EsriPwoerByelements.length; i++) {
+                            EsriPwoerByelements[i].setAttribute("style", "display:none");
+                        }
                     });
                 });
             },
@@ -610,12 +613,7 @@
                 var SeedsCollectsWhere = "";
                 this._SeedsCollects.forEach(function (SeedsCollect) { return SeedsCollectsWhere += "GlobalID_2 ='" + SeedsCollect + "' or "; });
                 SeedsCollectsWhere += "1=2";
-                //alert("GlobalID_2 in (" + SeedsCollectsWhere + ")")
-                //alert(SeedsCollectsWhere);
                 this.featerLayer.definitionExpression = SeedsCollectsWhere;
-                alert(this.featerLayer.definitionExpression);
-                //this.featerLayer.definitionExpression = "GlobalID_2 ='" + this._SeedsCollects[0] + "'";
-                //this.featerLayer.definitionExpression = "1=1";
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();
                     query.outSpatialReference = _this.mapView.spatialReference;
@@ -630,10 +628,10 @@
                             response.extent.spatialReference = _this.mapView.spatialReference;
                             _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
                         }
-                        //var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
-                        //for (let i = 0; i < EsriPwoerByelements.length; i++) {  
-                        //  EsriPwoerByelements[i].setAttribute("style", "display:none");
-                        //}
+                        var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
+                        for (var i = 0; i < EsriPwoerByelements.length; i++) {
+                            EsriPwoerByelements[i].setAttribute("style", "display:none");
+                        }
                     });
                 });
             },
@@ -695,12 +693,12 @@
         return SeedsCollectComponent;
     }());
     SeedsCollectComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
-    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "zzzzz222\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-SeedsCollect',
-                        template: "zzzzz222\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
+                        template: "\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return [{ type: YaaranutService }]; }, propDecorators: { content: [{
