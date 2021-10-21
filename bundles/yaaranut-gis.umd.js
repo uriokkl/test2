@@ -519,12 +519,12 @@
         return WorkUnitComponent;
     }());
     WorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
-    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ", isInline: true });
+    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "YaaranutGis-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "11111\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
-                        selector: 'lib-workUnit',
-                        template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ",
+                        selector: 'YaaranutGis-workUnit',
+                        template: "11111\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return [{ type: YaaranutService }]; }, propDecorators: { content: [{
@@ -693,11 +693,11 @@
         return SeedsCollectComponent;
     }());
     SeedsCollectComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
-    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "lib-SeedsCollect", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "YaaranutGis-SeedsCollect", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, decorators: [{
                 type: i0.Component,
                 args: [{
-                        selector: 'lib-SeedsCollect',
+                        selector: 'YaaranutGis-SeedsCollect',
                         template: "\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
                         styles: []
                     }]
