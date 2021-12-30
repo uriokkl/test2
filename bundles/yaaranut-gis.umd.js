@@ -862,7 +862,7 @@
                     try {
                         //esriConfig.apiKey = "AAPK9a3f55c380f94d1bb10a7566c7b32f941X_pcZKXmWY7Grjs6oA9AqufsDHrvRDYaOlUG8gvyD5fhZv-OGYyIgXEO-ihuO4T";
                         this.featerLayer = new FeatureLayer__default['default']({
-                            url: this.ys.apiUrl + "/ArcGIS/rest/services/ForestryTenders/FeatureServer/SubTenders/"
+                            url: this.ys.apiUrl + "/ArcGIS/rest/services/ForestryTenders/FeatureServer/1/"
                         });
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
