@@ -788,7 +788,7 @@
     var ForestryTendersComponent = /** @class */ (function () {
         function ForestryTendersComponent(ys) {
             this.ys = ys;
-            this._SeedsCollects = [];
+            this._ForestryTenders = [];
             this.firstTime = true;
             this.mapLoaded = new i0.EventEmitter();
             this.featerLayer = new FeatureLayer__default['default']();
@@ -803,21 +803,18 @@
             enumerable: false,
             configurable: true
         });
-        Object.defineProperty(ForestryTendersComponent.prototype, "seedsCollects", {
-            get: function () {
-                return this._SeedsCollects;
-            },
-            set: function (SeedsCollects) {
+        Object.defineProperty(ForestryTendersComponent.prototype, "ForestryTendersCollects", {
+            set: function (ForestryTenders) {
                 var _this = this;
-                this._SeedsCollects = SeedsCollects;
+                this._ForestryTenders = ForestryTenders;
                 if (this.firstTime) {
                     this.firstTime = false;
                     this.initializeMap();
                 }
-                var SeedsCollectsWhere = "";
-                this._SeedsCollects.forEach(function (SeedsCollect) { return SeedsCollectsWhere += "GlobalID_2 ='" + SeedsCollect + "' or "; });
-                SeedsCollectsWhere += "1=2";
-                this.featerLayer.definitionExpression = SeedsCollectsWhere;
+                var ForestryTendersWhere = "";
+                this._ForestryTenders.forEach(function (ForestryTenders) { return ForestryTendersWhere += "GlobalID ='" + ForestryTenders + "' or "; });
+                ForestryTendersWhere += "1=2";
+                this.featerLayer.definitionExpression = ForestryTendersWhere;
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();
                     query.outSpatialReference = _this.mapView.spatialReference;
@@ -842,6 +839,13 @@
             enumerable: false,
             configurable: true
         });
+        Object.defineProperty(ForestryTendersComponent.prototype, "seedsCollects", {
+            get: function () {
+                return this._ForestryTenders;
+            },
+            enumerable: false,
+            configurable: true
+        });
         ForestryTendersComponent.prototype.initializeMap = function () {
             return __awaiter(this, void 0, void 0, function () {
                 var webMap, basemap, featerRenderer, polygonsSimpleFillSymbol, labelClass;
@@ -862,19 +866,19 @@
                     try {
                         //esriConfig.apiKey = "AAPK9a3f55c380f94d1bb10a7566c7b32f941X_pcZKXmWY7Grjs6oA9AqufsDHrvRDYaOlUG8gvyD5fhZv-OGYyIgXEO-ihuO4T";
                         this.featerLayer = new FeatureLayer__default['default']({
-                            url: this.ys.apiUrl + "/ArcGIS/rest/services/SeedCollect2021/FeatureServer/0/"
+                            url: this.ys.apiUrl + "/ArcGIS/rest/services/ForestryTenders/FeatureServer/SubTenders/"
                         });
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
                         featerRenderer = new SimpleRenderer__default['default']();
-                        featerRenderer.label = "{Site}";
+                        featerRenderer.label = "{TenderName}";
                         polygonsSimpleFillSymbol = new symbols.SimpleFillSymbol();
-                        polygonsSimpleFillSymbol.color = Color__default['default'].fromString("gold");
+                        polygonsSimpleFillSymbol.color = Color__default['default'].fromString("blue");
                         polygonsSimpleFillSymbol.outline.color = Color__default['default'].fromString("blue");
                         polygonsSimpleFillSymbol.outline.width = 2;
                         featerRenderer.symbol = polygonsSimpleFillSymbol;
                         labelClass = new LabelClass__default['default']();
-                        labelClass.labelExpressionInfo = { expression: "$feature.Site + ', ' +  $feature.HebNic " };
+                        labelClass.labelExpressionInfo = { expression: "$feature.TenderName + ', ' +  $feature.SubTenderID + ', ' +  $feature.SubTenderYear " };
                         this.featerLayer.labelingInfo = [labelClass];
                         //this.featerLayer.renderer = featerRenderer;
                         webMap.add(this.featerLayer);
@@ -898,7 +902,7 @@
         return ForestryTendersComponent;
     }());
     ForestryTendersComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
-    ForestryTendersComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "YaaranutGis-ForestryTenders", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewForestryTenders"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewForestryTenders style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    ForestryTendersComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "YaaranutGis-ForestryTenders", inputs: { ForestryTendersCollects: "ForestryTendersCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewForestryTenders"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewForestryTenders style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersComponent, decorators: [{
                 type: i0.Component,
                 args: [{
@@ -911,7 +915,7 @@
                     args: ['mapViewForestryTenders', { static: true }]
                 }], mapLoaded: [{
                     type: i0.Output
-                }], seedsCollects: [{
+                }], ForestryTendersCollects: [{
                     type: i0.Input
                 }] } });
 

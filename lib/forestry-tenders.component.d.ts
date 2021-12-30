@@ -6,11 +6,11 @@ import * as i0 from "@angular/core";
 export declare class ForestryTendersComponent implements OnInit {
     private ys;
     private mapViewEl;
-    private _SeedsCollects;
+    private _ForestryTenders;
     private firstTime;
     set content(content: ElementRef);
     mapLoaded: EventEmitter<boolean>;
-    set seedsCollects(SeedsCollects: string[]);
+    set ForestryTendersCollects(ForestryTenders: string[]);
     get seedsCollects(): string[];
     featerLayer: FeatureLayer;
     mapView: MapView;
@@ -18,5 +18,5 @@ export declare class ForestryTendersComponent implements OnInit {
     initializeMap(): Promise<void>;
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ForestryTendersComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ForestryTendersComponent, "YaaranutGis-ForestryTenders", never, { "seedsCollects": "seedsCollects"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ForestryTendersComponent, "YaaranutGis-ForestryTenders", never, { "ForestryTendersCollects": "ForestryTendersCollects"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
 }

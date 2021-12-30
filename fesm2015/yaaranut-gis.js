@@ -418,7 +418,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
 class ForestryTendersComponent {
     constructor(ys) {
         this.ys = ys;
-        this._SeedsCollects = [];
+        this._ForestryTenders = [];
         this.firstTime = true;
         this.mapLoaded = new EventEmitter();
         this.featerLayer = new FeatureLayer();
@@ -429,16 +429,16 @@ class ForestryTendersComponent {
             this.mapViewEl = content;
         }
     }
-    set seedsCollects(SeedsCollects) {
-        this._SeedsCollects = SeedsCollects;
+    set ForestryTendersCollects(ForestryTenders) {
+        this._ForestryTenders = ForestryTenders;
         if (this.firstTime) {
             this.firstTime = false;
             this.initializeMap();
         }
-        let SeedsCollectsWhere = "";
-        this._SeedsCollects.forEach(SeedsCollect => SeedsCollectsWhere += "GlobalID_2 ='" + SeedsCollect + "' or ");
-        SeedsCollectsWhere += "1=2";
-        this.featerLayer.definitionExpression = SeedsCollectsWhere;
+        let ForestryTendersWhere = "";
+        this._ForestryTenders.forEach(ForestryTenders => ForestryTendersWhere += "GlobalID ='" + ForestryTenders + "' or ");
+        ForestryTendersWhere += "1=2";
+        this.featerLayer.definitionExpression = ForestryTendersWhere;
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
             query.outSpatialReference = this.mapView.spatialReference;
@@ -461,7 +461,7 @@ class ForestryTendersComponent {
         });
     }
     get seedsCollects() {
-        return this._SeedsCollects;
+        return this._ForestryTenders;
     }
     initializeMap() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -481,7 +481,7 @@ class ForestryTendersComponent {
             try {
                 //esriConfig.apiKey = "AAPK9a3f55c380f94d1bb10a7566c7b32f941X_pcZKXmWY7Grjs6oA9AqufsDHrvRDYaOlUG8gvyD5fhZv-OGYyIgXEO-ihuO4T";
                 this.featerLayer = new FeatureLayer({
-                    url: this.ys.apiUrl + "/ArcGIS/rest/services/SeedCollect2021/FeatureServer/0/"
+                    url: this.ys.apiUrl + "/ArcGIS/rest/services/ForestryTenders/FeatureServer/SubTenders/"
                 });
                 this.featerLayer.opacity = 0.5;
                 this.featerLayer.definitionExpression = "1=2";
@@ -491,14 +491,14 @@ class ForestryTendersComponent {
                 //this.featerLayer.outFields = ["FOR_NO"];
                 //this.featerLayer.popupEnabled = true;
                 const featerRenderer = new SimpleRenderer();
-                featerRenderer.label = "{Site}";
+                featerRenderer.label = "{TenderName}";
                 const polygonsSimpleFillSymbol = new SimpleFillSymbol();
-                polygonsSimpleFillSymbol.color = Color.fromString("gold");
+                polygonsSimpleFillSymbol.color = Color.fromString("blue");
                 polygonsSimpleFillSymbol.outline.color = Color.fromString("blue");
                 polygonsSimpleFillSymbol.outline.width = 2;
                 featerRenderer.symbol = polygonsSimpleFillSymbol;
                 const labelClass = new LabelClass();
-                labelClass.labelExpressionInfo = { expression: "$feature.Site + ', ' +  $feature.HebNic " };
+                labelClass.labelExpressionInfo = { expression: "$feature.TenderName + ', ' +  $feature.SubTenderID + ', ' +  $feature.SubTenderYear " };
                 this.featerLayer.labelingInfo = [labelClass];
                 //this.featerLayer.renderer = featerRenderer;
                 webMap.add(this.featerLayer);
@@ -519,7 +519,7 @@ class ForestryTendersComponent {
     }
 }
 ForestryTendersComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: ForestryTendersComponent, deps: [{ token: YaaranutService }], target: i0.ɵɵFactoryTarget.Component });
-ForestryTendersComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "YaaranutGis-ForestryTenders", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewForestryTenders"], descendants: true, static: true }], ngImport: i0, template: `
+ForestryTendersComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "YaaranutGis-ForestryTenders", inputs: { ForestryTendersCollects: "ForestryTendersCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewForestryTenders"], descendants: true, static: true }], ngImport: i0, template: `
     <div #mapViewForestryTenders style="width:100%;height: 100%;background-color:green"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: ForestryTendersComponent, decorators: [{
@@ -536,7 +536,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
                 args: ['mapViewForestryTenders', { static: true }]
             }], mapLoaded: [{
                 type: Output
-            }], seedsCollects: [{
+            }], ForestryTendersCollects: [{
                 type: Input
             }] } });
 
