@@ -10,13 +10,13 @@ export declare class ForestryTendersComponent implements OnInit {
     private firstTime;
     set content(content: ElementRef);
     mapLoaded: EventEmitter<boolean>;
-    set ForestryTendersCollects(ForestryTenders: string[]);
-    get seedsCollects(): string[];
+    set ForestryTenders(ForestryTenders: string[]);
+    get ForestryTenders(): string[];
     featerLayer: FeatureLayer;
     mapView: MapView;
     constructor(ys: YaaranutService);
     initializeMap(): Promise<void>;
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ForestryTendersComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ForestryTendersComponent, "YaaranutGis-ForestryTenders", never, { "ForestryTendersCollects": "ForestryTendersCollects"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ForestryTendersComponent, "YaaranutGis-ForestryTenders", never, { "ForestryTenders": "ForestryTenders"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
 }

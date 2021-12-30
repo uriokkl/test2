@@ -803,7 +803,10 @@
             enumerable: false,
             configurable: true
         });
-        Object.defineProperty(ForestryTendersComponent.prototype, "ForestryTendersCollects", {
+        Object.defineProperty(ForestryTendersComponent.prototype, "ForestryTenders", {
+            get: function () {
+                return this._ForestryTenders;
+            },
             set: function (ForestryTenders) {
                 var _this = this;
                 this._ForestryTenders = ForestryTenders;
@@ -835,13 +838,6 @@
                         }
                     });
                 });
-            },
-            enumerable: false,
-            configurable: true
-        });
-        Object.defineProperty(ForestryTendersComponent.prototype, "seedsCollects", {
-            get: function () {
-                return this._ForestryTenders;
             },
             enumerable: false,
             configurable: true
@@ -902,7 +898,7 @@
         return ForestryTendersComponent;
     }());
     ForestryTendersComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
-    ForestryTendersComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "YaaranutGis-ForestryTenders", inputs: { ForestryTendersCollects: "ForestryTendersCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewForestryTenders"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewForestryTenders style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    ForestryTendersComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "YaaranutGis-ForestryTenders", inputs: { ForestryTenders: "ForestryTenders" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewForestryTenders"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewForestryTenders style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersComponent, decorators: [{
                 type: i0.Component,
                 args: [{
@@ -915,7 +911,7 @@
                     args: ['mapViewForestryTenders', { static: true }]
                 }], mapLoaded: [{
                     type: i0.Output
-                }], ForestryTendersCollects: [{
+                }], ForestryTenders: [{
                     type: i0.Input
                 }] } });
 
