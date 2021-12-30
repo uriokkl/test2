@@ -788,11 +788,11 @@
     var ForestryTendersComponent = /** @class */ (function () {
         function ForestryTendersComponent(ys) {
             this.ys = ys;
-            this.featerLayer = new FeatureLayer__default['default']();
-            this.mapView = new MapView__default['default']();
             this._ForestryTenders = [];
             this.firstTime = true;
             this.mapLoaded = new i0.EventEmitter();
+            this.featerLayer = new FeatureLayer__default['default']();
+            this.mapView = new MapView__default['default']();
         }
         Object.defineProperty(ForestryTendersComponent.prototype, "content", {
             set: function (content) {
@@ -824,6 +824,11 @@
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();
                     query.outSpatialReference = _this.mapView.spatialReference;
+                    _this.featerLayer.queryFeatures().then(function (response) {
+                        response.features.forEach(function (feature) {
+                            var axzz = "Dfgd";
+                        });
+                    });
                     _this.featerLayer.queryExtent(query)
                         .then(function (response) {
                         if (response.extent !== null) {

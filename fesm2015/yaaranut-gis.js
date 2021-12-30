@@ -418,15 +418,17 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
 class ForestryTendersComponent {
     constructor(ys) {
         this.ys = ys;
-        this.featerLayer = new FeatureLayer();
-        this.mapView = new MapView();
         this._ForestryTenders = [];
         this.firstTime = true;
         this.mapLoaded = new EventEmitter();
+        this.featerLayer = new FeatureLayer();
+        this.mapView = new MapView();
     }
-    set content(content) { if (content) {
-        this.mapViewEl = content;
-    } }
+    set content(content) {
+        if (content) {
+            this.mapViewEl = content;
+        }
+    }
     set ForestryTenders(ForestryTenders) {
         this._ForestryTenders = ForestryTenders;
         if (this.firstTime) {
@@ -443,6 +445,11 @@ class ForestryTendersComponent {
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
             query.outSpatialReference = this.mapView.spatialReference;
+            this.featerLayer.queryFeatures().then(response => {
+                response.features.forEach(feature => {
+                    const axzz = "Dfgd";
+                });
+            });
             this.featerLayer.queryExtent(query)
                 .then(response => {
                 if (response.extent !== null) {
