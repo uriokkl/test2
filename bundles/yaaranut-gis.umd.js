@@ -898,17 +898,17 @@
         return ForestryTendersComponent;
     }());
     ForestryTendersComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
-    ForestryTendersComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "lib-ForestryTenders", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewForestryTenders style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    ForestryTendersComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "YaaranutGis-ForestryTenders", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewForestryTenders"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewForestryTenders style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersComponent, decorators: [{
                 type: i0.Component,
                 args: [{
-                        selector: 'lib-ForestryTenders',
+                        selector: 'YaaranutGis-ForestryTenders',
                         template: "\n    <div #mapViewForestryTenders style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return [{ type: YaaranutService }]; }, propDecorators: { content: [{
                     type: i0.ViewChild,
-                    args: ['mapViewSeedsCollect', { static: true }]
+                    args: ['mapViewForestryTenders', { static: true }]
                 }], mapLoaded: [{
                     type: i0.Output
                 }], seedsCollects: [{

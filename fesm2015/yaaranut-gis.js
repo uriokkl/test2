@@ -519,13 +519,13 @@ class ForestryTendersComponent {
     }
 }
 ForestryTendersComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: ForestryTendersComponent, deps: [{ token: YaaranutService }], target: i0.ɵɵFactoryTarget.Component });
-ForestryTendersComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "lib-ForestryTenders", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0, template: `
+ForestryTendersComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "YaaranutGis-ForestryTenders", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewForestryTenders"], descendants: true, static: true }], ngImport: i0, template: `
     <div #mapViewForestryTenders style="width:100%;height: 100%;background-color:green"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: ForestryTendersComponent, decorators: [{
             type: Component,
             args: [{
-                    selector: 'lib-ForestryTenders',
+                    selector: 'YaaranutGis-ForestryTenders',
                     template: `
     <div #mapViewForestryTenders style="width:100%;height: 100%;background-color:green"></div>
   `,
@@ -533,7 +533,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
                 }]
         }], ctorParameters: function () { return [{ type: YaaranutService }]; }, propDecorators: { content: [{
                 type: ViewChild,
-                args: ['mapViewSeedsCollect', { static: true }]
+                args: ['mapViewForestryTenders', { static: true }]
             }], mapLoaded: [{
                 type: Output
             }], seedsCollects: [{

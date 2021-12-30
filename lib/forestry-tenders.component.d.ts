@@ -18,5 +18,5 @@ export declare class ForestryTendersComponent implements OnInit {
     initializeMap(): Promise<void>;
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ForestryTendersComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ForestryTendersComponent, "lib-ForestryTenders", never, { "seedsCollects": "seedsCollects"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ForestryTendersComponent, "YaaranutGis-ForestryTenders", never, { "seedsCollects": "seedsCollects"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
 }
