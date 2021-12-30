@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@arcgis/core/WebMap'), require('@arcgis/core/views/MapView'), require('@arcgis/core/layers/FeatureLayer'), require('@arcgis/core/Basemap'), require('@arcgis/core/layers/support/LabelClass'), require('@arcgis/core/symbols'), require('@arcgis/core/Color'), require('@arcgis/core/renderers/SimpleRenderer'), require('@angular/platform-browser'), require('@angular/forms')) :
-    typeof define === 'function' && define.amd ? define('yaaranut-gis', ['exports', '@angular/core', '@arcgis/core/WebMap', '@arcgis/core/views/MapView', '@arcgis/core/layers/FeatureLayer', '@arcgis/core/Basemap', '@arcgis/core/layers/support/LabelClass', '@arcgis/core/symbols', '@arcgis/core/Color', '@arcgis/core/renderers/SimpleRenderer', '@angular/platform-browser', '@angular/forms'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['yaaranut-gis'] = {}, global.ng.core, global.WebMap, global.MapView, global.FeatureLayer, global.Basemap, global.LabelClass, global.symbols, global.Color, global.SimpleRenderer, global.ng.platformBrowser, global.ng.forms));
-}(this, (function (exports, i0, WebMap, MapView, FeatureLayer, Basemap, LabelClass, symbols, Color, SimpleRenderer, platformBrowser, forms) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/core/testing'), require('@arcgis/core/WebMap'), require('@arcgis/core/views/MapView'), require('@arcgis/core/layers/FeatureLayer'), require('@arcgis/core/Basemap'), require('@arcgis/core/layers/support/LabelClass'), require('@arcgis/core/symbols'), require('@arcgis/core/Color'), require('@arcgis/core/renderers/SimpleRenderer'), require('@angular/common'), require('@angular/forms')) :
+    typeof define === 'function' && define.amd ? define('yaaranut-gis', ['exports', '@angular/core', '@angular/core/testing', '@arcgis/core/WebMap', '@arcgis/core/views/MapView', '@arcgis/core/layers/FeatureLayer', '@arcgis/core/Basemap', '@arcgis/core/layers/support/LabelClass', '@arcgis/core/symbols', '@arcgis/core/Color', '@arcgis/core/renderers/SimpleRenderer', '@angular/common', '@angular/forms'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['yaaranut-gis'] = {}, global.ng.core, global.ng.core.testing, global.WebMap, global.MapView, global.FeatureLayer, global.Basemap, global.LabelClass, global.symbols, global.Color, global.SimpleRenderer, global.ng.common, global.ng.forms));
+}(this, (function (exports, i0, i1, WebMap, MapView, FeatureLayer, Basemap, LabelClass, symbols, Color, SimpleRenderer, common, forms) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -27,6 +27,7 @@
     }
 
     var i0__namespace = /*#__PURE__*/_interopNamespace(i0);
+    var i1__namespace = /*#__PURE__*/_interopNamespace(i1);
     var WebMap__default = /*#__PURE__*/_interopDefaultLegacy(WebMap);
     var MapView__default = /*#__PURE__*/_interopDefaultLegacy(MapView);
     var FeatureLayer__default = /*#__PURE__*/_interopDefaultLegacy(FeatureLayer);
@@ -51,18 +52,41 @@
      */
     // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 
+    var environmentTest = {
+        production: false,
+        apiUrl: 'https://kkl-yaaranutgisapi.azurewebsites.net',
+    };
+
+    var environmentProd = {
+        production: true,
+        apiUrl: 'https://kkl-yaaranutgisapi.azurewebsites.net',
+    };
+
     var YaaranutService = /** @class */ (function () {
-        function YaaranutService() {
+        function YaaranutService(testBed) {
             this.apiUrl = "";
-            this.apiUrl = environment.apiUrl;
+            if (i0.isDevMode()) {
+                this.apiUrl = environment.apiUrl;
+                this.apiUrl = environmentTest.apiUrl;
+            }
+            else if (testBed !== null) {
+                this.apiUrl = environmentTest.apiUrl;
+            }
+            else {
+                this.apiUrl = environmentProd.apiUrl;
+            }
         }
         return YaaranutService;
     }());
-    YaaranutService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, deps: [], target: i0__namespace.ɵɵFactoryTarget.Injectable });
+    YaaranutService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, deps: [{ token: i1__namespace.TestBed, optional: true }], target: i0__namespace.ɵɵFactoryTarget.Injectable });
     YaaranutService.ɵprov = i0__namespace.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, decorators: [{
                 type: i0.Injectable
-            }], ctorParameters: function () { return []; } });
+            }], ctorParameters: function () {
+            return [{ type: i1__namespace.TestBed, decorators: [{
+                            type: i0.Optional
+                        }] }];
+        } });
 
     var WorkUnitService = /** @class */ (function () {
         function WorkUnitService() {
@@ -508,6 +532,7 @@
                         //});
                     }
                     catch (error) {
+                        console.error(error);
                         alert('We have an error: ' + error);
                     }
                     return [2 /*return*/];
@@ -519,12 +544,12 @@
         return WorkUnitComponent;
     }());
     WorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
-    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "YaaranutGis-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "11111\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ", isInline: true });
+    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "YaaranutGis-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'YaaranutGis-workUnit',
-                        template: "11111\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ",
+                        template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return [{ type: YaaranutService }]; }, propDecorators: { content: [{
@@ -545,10 +570,12 @@
     }());
     WorkUnitModule.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, deps: [], target: i0__namespace.ɵɵFactoryTarget.NgModule });
     WorkUnitModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, declarations: [WorkUnitComponent], imports: [forms.FormsModule,
-            platformBrowser.BrowserModule], exports: [WorkUnitComponent] });
+            //BrowserModule
+            common.CommonModule], exports: [WorkUnitComponent] });
     WorkUnitModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, imports: [[
                 forms.FormsModule,
-                platformBrowser.BrowserModule
+                //BrowserModule
+                common.CommonModule
             ]] });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, decorators: [{
                 type: i0.NgModule,
@@ -558,7 +585,8 @@
                         ],
                         imports: [
                             forms.FormsModule,
-                            platformBrowser.BrowserModule
+                            //BrowserModule
+                            common.CommonModule
                         ],
                         exports: [
                             WorkUnitComponent
@@ -584,9 +612,9 @@
     var SeedsCollectComponent = /** @class */ (function () {
         function SeedsCollectComponent(ys) {
             this.ys = ys;
-            this.mapLoaded = new i0.EventEmitter();
             this._SeedsCollects = [];
             this.firstTime = true;
+            this.mapLoaded = new i0.EventEmitter();
             this.featerLayer = new FeatureLayer__default['default']();
             this.mapView = new MapView__default['default']();
         }
@@ -658,7 +686,7 @@
                     try {
                         //esriConfig.apiKey = "AAPK9a3f55c380f94d1bb10a7566c7b32f941X_pcZKXmWY7Grjs6oA9AqufsDHrvRDYaOlUG8gvyD5fhZv-OGYyIgXEO-ihuO4T";
                         this.featerLayer = new FeatureLayer__default['default']({
-                            url: this.ys.apiUrl + "/ArcGIS/rest/services/SeedCollect2021/FeatureServer/0"
+                            url: this.ys.apiUrl + "/ArcGIS/rest/services/SeedCollect2021/FeatureServer/0/"
                         });
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
@@ -670,7 +698,7 @@
                         polygonsSimpleFillSymbol.outline.width = 2;
                         featerRenderer.symbol = polygonsSimpleFillSymbol;
                         labelClass = new LabelClass__default['default']();
-                        labelClass.labelExpressionInfo = { expression: "$feature.Site + ',' +  $feature.HebNic " };
+                        labelClass.labelExpressionInfo = { expression: "$feature.Site + ', ' +  $feature.HebNic " };
                         this.featerLayer.labelingInfo = [labelClass];
                         //this.featerLayer.renderer = featerRenderer;
                         webMap.add(this.featerLayer);
@@ -682,6 +710,7 @@
                         //});
                     }
                     catch (error) {
+                        console.error(error);
                         alert('We have an error: ' + error);
                     }
                     return [2 /*return*/];
@@ -717,10 +746,12 @@
     }());
     SeedsCollectModule.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, deps: [], target: i0__namespace.ɵɵFactoryTarget.NgModule });
     SeedsCollectModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, declarations: [SeedsCollectComponent], imports: [forms.FormsModule,
-            platformBrowser.BrowserModule], exports: [SeedsCollectComponent] });
+            //BrowserModule
+            common.CommonModule], exports: [SeedsCollectComponent] });
     SeedsCollectModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, imports: [[
                 forms.FormsModule,
-                platformBrowser.BrowserModule
+                //BrowserModule
+                common.CommonModule
             ]] });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, decorators: [{
                 type: i0.NgModule,
@@ -730,10 +761,187 @@
                         ],
                         imports: [
                             forms.FormsModule,
-                            platformBrowser.BrowserModule
+                            //BrowserModule
+                            common.CommonModule
                         ],
                         exports: [
                             SeedsCollectComponent
+                        ],
+                        schemas: [i0.CUSTOM_ELEMENTS_SCHEMA]
+                    }]
+            }] });
+
+    var ForestryTendersService = /** @class */ (function () {
+        function ForestryTendersService() {
+        }
+        return ForestryTendersService;
+    }());
+    ForestryTendersService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersService, deps: [], target: i0__namespace.ɵɵFactoryTarget.Injectable });
+    ForestryTendersService.ɵprov = i0__namespace.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersService, providedIn: 'root' });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersService, decorators: [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root'
+                    }]
+            }], ctorParameters: function () { return []; } });
+
+    var ForestryTendersComponent = /** @class */ (function () {
+        function ForestryTendersComponent(ys) {
+            this.ys = ys;
+            this._SeedsCollects = [];
+            this.firstTime = true;
+            this.mapLoaded = new i0.EventEmitter();
+            this.featerLayer = new FeatureLayer__default['default']();
+            this.mapView = new MapView__default['default']();
+        }
+        Object.defineProperty(ForestryTendersComponent.prototype, "content", {
+            set: function (content) {
+                if (content) {
+                    this.mapViewEl = content;
+                }
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(ForestryTendersComponent.prototype, "seedsCollects", {
+            get: function () {
+                return this._SeedsCollects;
+            },
+            set: function (SeedsCollects) {
+                var _this = this;
+                this._SeedsCollects = SeedsCollects;
+                if (this.firstTime) {
+                    this.firstTime = false;
+                    this.initializeMap();
+                }
+                var SeedsCollectsWhere = "";
+                this._SeedsCollects.forEach(function (SeedsCollect) { return SeedsCollectsWhere += "GlobalID_2 ='" + SeedsCollect + "' or "; });
+                SeedsCollectsWhere += "1=2";
+                this.featerLayer.definitionExpression = SeedsCollectsWhere;
+                this.featerLayer.when(function () {
+                    var query = _this.featerLayer.createQuery();
+                    query.outSpatialReference = _this.mapView.spatialReference;
+                    _this.featerLayer.queryFeatures().then(function (response) {
+                        response.features.forEach(function (feature) {
+                            var axzz = "Dfgd";
+                        });
+                    });
+                    _this.featerLayer.queryExtent(query)
+                        .then(function (response) {
+                        if (response.extent !== null) {
+                            response.extent.spatialReference = _this.mapView.spatialReference;
+                            _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
+                        }
+                        var EsriPwoerByelements = document.getElementsByClassName("esri-ui calcite-theme-light");
+                        for (var i = 0; i < EsriPwoerByelements.length; i++) {
+                            EsriPwoerByelements[i].setAttribute("style", "display:none");
+                        }
+                    });
+                });
+            },
+            enumerable: false,
+            configurable: true
+        });
+        ForestryTendersComponent.prototype.initializeMap = function () {
+            return __awaiter(this, void 0, void 0, function () {
+                var webMap, basemap, featerRenderer, polygonsSimpleFillSymbol, labelClass;
+                return __generator(this, function (_a) {
+                    webMap = new WebMap__default['default']({
+                        basemap: "topo",
+                        //portalItem: {
+                        //  //url:"https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/JNFILForest/FeatureServer/0/query"
+                        //  id: "streets"
+                        //}
+                    });
+                    basemap = new Basemap__default['default']({
+                        portalItem: {
+                        //url:""
+                        //id: "streets"  // WGS84 Streets Vector webmap
+                        }
+                    });
+                    try {
+                        //esriConfig.apiKey = "AAPK9a3f55c380f94d1bb10a7566c7b32f941X_pcZKXmWY7Grjs6oA9AqufsDHrvRDYaOlUG8gvyD5fhZv-OGYyIgXEO-ihuO4T";
+                        this.featerLayer = new FeatureLayer__default['default']({
+                            url: this.ys.apiUrl + "/ArcGIS/rest/services/SeedCollect2021/FeatureServer/0/"
+                        });
+                        this.featerLayer.opacity = 0.5;
+                        this.featerLayer.definitionExpression = "1=2";
+                        featerRenderer = new SimpleRenderer__default['default']();
+                        featerRenderer.label = "{Site}";
+                        polygonsSimpleFillSymbol = new symbols.SimpleFillSymbol();
+                        polygonsSimpleFillSymbol.color = Color__default['default'].fromString("gold");
+                        polygonsSimpleFillSymbol.outline.color = Color__default['default'].fromString("blue");
+                        polygonsSimpleFillSymbol.outline.width = 2;
+                        featerRenderer.symbol = polygonsSimpleFillSymbol;
+                        labelClass = new LabelClass__default['default']();
+                        labelClass.labelExpressionInfo = { expression: "$feature.Site + ', ' +  $feature.HebNic " };
+                        this.featerLayer.labelingInfo = [labelClass];
+                        //this.featerLayer.renderer = featerRenderer;
+                        webMap.add(this.featerLayer);
+                        this.mapView.container = this.mapViewEl.nativeElement;
+                        this.mapView.map = webMap;
+                        //(await mapView.whenLayerView(featerLayer)).filter.where = "GlobalID = '" + this._filter[0] + "'";
+                        //mapView.when(() => {
+                        //  this.mapLoaded.emit(true);
+                        //});
+                    }
+                    catch (error) {
+                        console.error(error);
+                        alert('We have an error: ' + error);
+                    }
+                    return [2 /*return*/];
+                });
+            });
+        };
+        ForestryTendersComponent.prototype.ngOnInit = function () {
+        };
+        return ForestryTendersComponent;
+    }());
+    ForestryTendersComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
+    ForestryTendersComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "lib-ForestryTenders", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewForestryTenders style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersComponent, decorators: [{
+                type: i0.Component,
+                args: [{
+                        selector: 'lib-ForestryTenders',
+                        template: "\n    <div #mapViewForestryTenders style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
+                        styles: []
+                    }]
+            }], ctorParameters: function () { return [{ type: YaaranutService }]; }, propDecorators: { content: [{
+                    type: i0.ViewChild,
+                    args: ['mapViewSeedsCollect', { static: true }]
+                }], mapLoaded: [{
+                    type: i0.Output
+                }], seedsCollects: [{
+                    type: i0.Input
+                }] } });
+
+    var ForestryTendersModule = /** @class */ (function () {
+        function ForestryTendersModule() {
+        }
+        return ForestryTendersModule;
+    }());
+    ForestryTendersModule.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersModule, deps: [], target: i0__namespace.ɵɵFactoryTarget.NgModule });
+    ForestryTendersModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersModule, declarations: [ForestryTendersComponent], imports: [forms.FormsModule,
+            //BrowserModule
+            common.CommonModule], exports: [ForestryTendersComponent] });
+    ForestryTendersModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersModule, imports: [[
+                forms.FormsModule,
+                //BrowserModule
+                common.CommonModule
+            ]] });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersModule, decorators: [{
+                type: i0.NgModule,
+                args: [{
+                        declarations: [
+                            ForestryTendersComponent
+                        ],
+                        imports: [
+                            forms.FormsModule,
+                            //BrowserModule
+                            common.CommonModule
+                        ],
+                        exports: [
+                            ForestryTendersComponent
                         ],
                         schemas: [i0.CUSTOM_ELEMENTS_SCHEMA]
                     }]
@@ -747,6 +955,9 @@
      * Generated bundle index. Do not edit.
      */
 
+    exports.ForestryTendersComponent = ForestryTendersComponent;
+    exports.ForestryTendersModule = ForestryTendersModule;
+    exports.ForestryTendersService = ForestryTendersService;
     exports.SeedsCollectComponent = SeedsCollectComponent;
     exports.SeedsCollectModule = SeedsCollectModule;
     exports.SeedsCollectService = SeedsCollectService;
