@@ -788,11 +788,11 @@
     var ForestryTendersComponent = /** @class */ (function () {
         function ForestryTendersComponent(ys) {
             this.ys = ys;
+            this.featerLayer = new FeatureLayer__default['default']();
+            this.mapView = new MapView__default['default']();
             this._ForestryTenders = [];
             this.firstTime = true;
             this.mapLoaded = new i0.EventEmitter();
-            this.featerLayer = new FeatureLayer__default['default']();
-            this.mapView = new MapView__default['default']();
         }
         Object.defineProperty(ForestryTendersComponent.prototype, "content", {
             set: function (content) {
@@ -817,18 +817,13 @@
                 var ForestryTendersWhere = "";
                 this._ForestryTenders.forEach(function (ForestryTenders) {
                     if (ForestryTendersWhere !== "")
-                        ForestryTendersWhere == " or ";
+                        ForestryTendersWhere += " or ";
                     ForestryTendersWhere += "GlobalID ='" + ForestryTenders + "'";
                 });
                 this.featerLayer.definitionExpression = ForestryTendersWhere;
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();
                     query.outSpatialReference = _this.mapView.spatialReference;
-                    _this.featerLayer.queryFeatures().then(function (response) {
-                        response.features.forEach(function (feature) {
-                            var axzz = "Dfgd";
-                        });
-                    });
                     _this.featerLayer.queryExtent(query)
                         .then(function (response) {
                         if (response.extent !== null) {
@@ -847,46 +842,30 @@
         });
         ForestryTendersComponent.prototype.initializeMap = function () {
             return __awaiter(this, void 0, void 0, function () {
-                var webMap, basemap, featerRenderer, polygonsSimpleFillSymbol, labelClass;
+                var webMap, labelClass, polygonsSimpleFillSymbol, featerRenderer;
                 return __generator(this, function (_a) {
-                    webMap = new WebMap__default['default']({
-                        basemap: "topo",
-                        //portalItem: {
-                        //  //url:"https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/JNFILForest/FeatureServer/0/query"
-                        //  id: "streets"
-                        //}
-                    });
-                    basemap = new Basemap__default['default']({
-                        portalItem: {
-                        //url:""
-                        //id: "streets"  // WGS84 Streets Vector webmap
-                        }
-                    });
                     try {
-                        //esriConfig.apiKey = "AAPK9a3f55c380f94d1bb10a7566c7b32f941X_pcZKXmWY7Grjs6oA9AqufsDHrvRDYaOlUG8gvyD5fhZv-OGYyIgXEO-ihuO4T";
+                        webMap = new WebMap__default['default']({
+                            basemap: "topo",
+                        });
+                        labelClass = new LabelClass__default['default']();
+                        labelClass.labelExpressionInfo = { expression: "$feature.TenderName + ', ' +  $feature.SubTenderID + ', ' +  $feature.SubTenderYear " };
                         this.featerLayer = new FeatureLayer__default['default']({
                             url: this.ys.apiUrl + "/ArcGIS/rest/services/ForestryTenders/FeatureServer/1/"
                         });
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
-                        featerRenderer = new SimpleRenderer__default['default']();
-                        featerRenderer.label = "{TenderName}";
+                        this.featerLayer.labelingInfo = [labelClass];
                         polygonsSimpleFillSymbol = new symbols.SimpleFillSymbol();
                         polygonsSimpleFillSymbol.color = Color__default['default'].fromString("blue");
                         polygonsSimpleFillSymbol.outline.color = Color__default['default'].fromString("blue");
                         polygonsSimpleFillSymbol.outline.width = 2;
+                        featerRenderer = new SimpleRenderer__default['default']();
                         featerRenderer.symbol = polygonsSimpleFillSymbol;
-                        labelClass = new LabelClass__default['default']();
-                        labelClass.labelExpressionInfo = { expression: "$feature.TenderName + ', ' +  $feature.SubTenderID + ', ' +  $feature.SubTenderYear " };
-                        this.featerLayer.labelingInfo = [labelClass];
-                        //this.featerLayer.renderer = featerRenderer;
+                        featerRenderer.label = "{TenderName}";
                         webMap.add(this.featerLayer);
                         this.mapView.container = this.mapViewEl.nativeElement;
                         this.mapView.map = webMap;
-                        //(await mapView.whenLayerView(featerLayer)).filter.where = "GlobalID = '" + this._filter[0] + "'";
-                        //mapView.when(() => {
-                        //  this.mapLoaded.emit(true);
-                        //});
                     }
                     catch (error) {
                         console.error(error);
@@ -896,8 +875,7 @@
                 });
             });
         };
-        ForestryTendersComponent.prototype.ngOnInit = function () {
-        };
+        ForestryTendersComponent.prototype.ngOnInit = function () { };
         return ForestryTendersComponent;
     }());
     ForestryTendersComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: ForestryTendersComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });

@@ -5,6 +5,8 @@ import { YaaranutService } from '../yaaranut.service';
 import * as i0 from "@angular/core";
 export declare class ForestryTendersComponent implements OnInit {
     private ys;
+    featerLayer: FeatureLayer;
+    mapView: MapView;
     private mapViewEl;
     private _ForestryTenders;
     private firstTime;
@@ -12,8 +14,6 @@ export declare class ForestryTendersComponent implements OnInit {
     mapLoaded: EventEmitter<boolean>;
     set ForestryTenders(ForestryTenders: string[]);
     get ForestryTenders(): string[];
-    featerLayer: FeatureLayer;
-    mapView: MapView;
     constructor(ys: YaaranutService);
     initializeMap(): Promise<void>;
     ngOnInit(): void;
