@@ -814,12 +814,14 @@
                     this.firstTime = false;
                     this.initializeMap();
                 }
-                var ForestryTendersWhere = "";
-                this._ForestryTenders.forEach(function (ForestryTenders) {
-                    if (ForestryTendersWhere !== "")
-                        ForestryTendersWhere += " or ";
-                    ForestryTendersWhere += "GlobalID ='" + ForestryTenders + "'";
-                });
+                //let ForestryTendersWhere = ""        
+                //this._ForestryTenders.forEach(
+                //    ForestryTenders => {
+                //        if (ForestryTendersWhere !== "") ForestryTendersWhere += " or ";
+                //        ForestryTendersWhere += "GlobalID ='" + ForestryTenders + "'"
+                //    }
+                //);
+                var ForestryTendersWhere = "GlobalID='" + this._ForestryTenders.join("' or GlobalID='") + "'";
                 this.featerLayer.definitionExpression = ForestryTendersWhere;
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();

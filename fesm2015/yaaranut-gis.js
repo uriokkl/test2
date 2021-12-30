@@ -433,12 +433,14 @@ class ForestryTendersComponent {
             this.firstTime = false;
             this.initializeMap();
         }
-        let ForestryTendersWhere = "";
-        this._ForestryTenders.forEach(ForestryTenders => {
-            if (ForestryTendersWhere !== "")
-                ForestryTendersWhere += " or ";
-            ForestryTendersWhere += "GlobalID ='" + ForestryTenders + "'";
-        });
+        //let ForestryTendersWhere = ""        
+        //this._ForestryTenders.forEach(
+        //    ForestryTenders => {
+        //        if (ForestryTendersWhere !== "") ForestryTendersWhere += " or ";
+        //        ForestryTendersWhere += "GlobalID ='" + ForestryTenders + "'"
+        //    }
+        //);
+        const ForestryTendersWhere = "GlobalID='" + this._ForestryTenders.join("' or GlobalID='") + "'";
         this.featerLayer.definitionExpression = ForestryTendersWhere;
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
